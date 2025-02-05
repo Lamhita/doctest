@@ -1,0 +1,1191 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../plan_restrictions/">
+      
+      
+        <link rel="next" href="../../../task2/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+    
+    
+      
+        <title>Subscription Lifecycle - Technical Writer Assignment</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#subscription-lifecycle" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Technical Writer Assignment" class="md-header__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technical Writer Assignment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Subscription Lifecycle
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Technical Writer Assignment" class="md-nav__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Technical Writer Assignment
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Task 1. System Architecture Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Task 1. System Architecture Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/system_components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/partner_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partner Management Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/user_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Management Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../why_multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why Multi-Tenancy?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy and User Roles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Multi-Tenancy and User Roles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy & Data Isolation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/rbac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Roles and Transitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Session Management and Limits
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Session Management and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session_management_policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Session Management Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/guest_session_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guest Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/basic_session_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Subscription Management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Subscription Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../subscription_plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subscription Plans and User Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan_restrictions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan Availability & Partner Restrictions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Subscription Lifecycle
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Subscription Lifecycle
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-confirmation-signing-signed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Confirmation (signing → signed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-suspension-signed-suspended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Suspension (signed → suspended)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscription Suspension (signed → suspended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-suspended-subscription-suspended-signed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restoring a Suspended Subscription (suspended → signed)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-cancellation-signed-unsigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Cancellation (signed → unsigned)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downgrades-subscription-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downgrades &amp; Subscription Impact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 2. API Specification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 3. Text Editing Exercise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-confirmation-signing-signed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Confirmation (signing → signed)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-suspension-signed-suspended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Suspension (signed → suspended)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscription Suspension (signed → suspended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-suspended-subscription-suspended-signed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restoring a Suspended Subscription (suspended → signed)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscription-cancellation-signed-unsigned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subscription Cancellation (signed → unsigned)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downgrades-subscription-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downgrades &amp; Subscription Impact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="subscription-lifecycle"><strong>Subscription Lifecycle</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>The <strong>Subscription Lifecycle</strong> defines how users <strong>subscribe to, modify, and cancel</strong> subscription plans. Each partner can configure <strong>plan availability, transition rules, and enforcement policies</strong>, but the <strong>core lifecycle states</strong> are <strong>system-wide and consistent</strong>.</p>
+<p>Subscription plans directly impact <strong>user role eligibility</strong> and <strong>available features</strong>. When a user <strong>subscribes, upgrades, or cancels</strong>, their subscription status changes accordingly.</p>
+<hr />
+<h2 id="subscription-states"><strong>Subscription States</strong></h2>
+<p>Each subscription follows a <strong>state-driven process</strong>, ensuring <strong>proper validation and enforcement</strong>. The possible states are:</p>
+<table>
+<thead>
+<tr>
+<th><strong>State</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unsigned</code></td>
+<td>The user has <strong>no active subscription</strong>.</td>
+</tr>
+<tr>
+<td><code>signing</code></td>
+<td>The user has <strong>initiated a subscription</strong> but is <strong>awaiting confirmation</strong>.</td>
+</tr>
+<tr>
+<td><code>signed</code></td>
+<td>The subscription is <strong>active</strong>, and the user has full access to the plan's features.</td>
+</tr>
+<tr>
+<td><code>suspended</code></td>
+<td>The subscription is <strong>temporarily inactive</strong> due to <strong>payment issues, policy violations, or admin actions</strong>.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>All Basic, Advanced, and Company users start in the <code>unsigned</code> state unless they already have an active subscription.</strong></li>
+<li><strong>Guest users are not eligible for subscriptions until they complete KYC and upgrade to Basic.</strong></li>
+<li><strong>Once a user subscribes</strong>, they enter the <code>signing</code> state.</li>
+<li><strong>If confirmation succeeds</strong>, the subscription transitions to <code>signed</code>.</li>
+<li><strong>If issues arise (e.g., payment failure, fraud detection, or admin suspension),</strong> the subscription may enter <code>suspended</code>.</li>
+</ul>
+<hr />
+<h2 id="subscription-flow"><strong>Subscription Flow</strong></h2>
+<p>The diagram below illustrates how users transition between subscription states.</p>
+<p><img src="data:image/png;base64,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" class="uml" alt="uml diagram" title="" /></p>
+<hr />
+<h2 id="subscription-confirmation-signing-signed"><strong>Subscription Confirmation (<code>signing → signed</code>)</strong></h2>
+<p>When a user <strong>subscribes to a plan</strong>, they transition to <code>signing</code> until the subscription is <strong>validated and confirmed</strong>. </p>
+<ul>
+<li>The confirmation process may include:</li>
+<li><strong>Payment verification</strong> (if required by the partner).</li>
+<li><strong>Manual approval or automated processing</strong>.</li>
+<li><strong>Fraud prevention checks</strong>.</li>
+<li>If <strong>successful</strong>, the user transitions to <code>signed</code>.</li>
+<li>If <strong>rejected</strong>, the user <strong>returns to <code>unsigned</code></strong>.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Partners may define additional conditions before a subscription is confirmed.</p>
+</blockquote>
+<hr />
+<h2 id="subscription-suspension-signed-suspended"><strong>Subscription Suspension (<code>signed → suspended</code>)</strong></h2>
+<p>A subscription may enter the <strong><code>suspended</code> state</strong> if any of the following occur:</p>
+<ul>
+<li><strong>Payment failure</strong> (for paid plans).</li>
+<li><strong>Policy violations</strong> (fraud detection, abuse, etc.).</li>
+<li><strong>Manual suspension by an admin</strong>.</li>
+<li><strong>Partner-defined restrictions</strong> (e.g., exceeding plan limits).</li>
+</ul>
+<blockquote>
+<p>While suspended, the user <strong>loses access to subscription-based features</strong> until the issue is resolved.</p>
+</blockquote>
+<h3 id="restoring-a-suspended-subscription-suspended-signed"><strong>Restoring a Suspended Subscription (<code>suspended → signed</code>)</strong></h3>
+<ul>
+<li><strong>If the issue is resolved</strong> (e.g., payment is completed), the subscription <strong>returns to <code>signed</code></strong>.</li>
+<li><strong>If not resolved within a partner-defined period</strong>, the subscription <strong>transitions to <code>unsigned</code></strong>.</li>
+</ul>
+<hr />
+<h2 id="subscription-cancellation-signed-unsigned"><strong>Subscription Cancellation (<code>signed → unsigned</code>)</strong></h2>
+<p>A user may <strong>cancel their subscription</strong>, resulting in a transition to <code>unsigned</code>.</p>
+<ul>
+<li><strong>For immediate cancellations</strong>, access is revoked <strong>instantly</strong>.</li>
+<li><strong>For scheduled cancellations</strong>, the user retains access <strong>until the end of the billing period</strong>.</li>
+<li><strong>If a user downgrades to a role that does not support the plan</strong>, their subscription is also canceled.</li>
+</ul>
+<hr />
+<h2 id="downgrades-subscription-impact"><strong>Downgrades &amp; Subscription Impact</strong></h2>
+<p>Subscription plans are <strong>mapped to user roles</strong>. When a user <strong>changes roles</strong>, their subscription status may be affected:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Role Change</strong></th>
+<th><strong>Subscription Impact</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic → Advanced</strong></td>
+<td>May gain access to <strong>additional plans</strong>.</td>
+</tr>
+<tr>
+<td><strong>Advanced → Basic</strong></td>
+<td>May lose access to <strong>previously available plans</strong>.</td>
+</tr>
+<tr>
+<td><strong>Downgrade to Guest/Admin</strong></td>
+<td><strong>Subscription is canceled</strong> (forced transition to <code>unsigned</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="summary"><strong>Summary</strong></h2>
+<p>The <strong>Subscription Lifecycle</strong> ensures a <strong>structured, enforceable process</strong> for managing user subscriptions. </p>
+<ul>
+<li><strong>Users transition between <code>unsigned</code>, <code>signing</code>, <code>signed</code>, and <code>suspended</code> states.</strong></li>
+<li><strong>Subscription confirmation requires validation (e.g., payment processing, approval).</strong></li>
+<li><strong>Suspensions occur due to payment failures, policy violations, or manual admin actions.</strong></li>
+<li><strong>Cancellations return the user to <code>unsigned</code>.</strong></li>
+<li><strong>Role changes can affect subscription eligibility.</strong></li>
+</ul>
+<p>For more details on subscription availability, see:</p>
+<ul>
+<li><a href="../subscriptions/plan-restrictions.md">Plan Availability &amp; Partner Restrictions</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5090c770.min.js"></script>
+      
+    
+  </body>
+</html>

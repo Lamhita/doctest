@@ -1,0 +1,43 @@
+site_name: Technical Writer Assignment
+site_dir: site
+theme:
+  name: material
+
+plugins:
+  - search
+  - render_swagger
+
+markdown_extensions:
+  - pymdownx.extra
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - plantuml_markdown:
+      server: "http://www.plantuml.com/plantuml"
+
+# Define the navigation structure properly
+nav:
+  - Home: index.md  # Main title page with Task 1, Task 2, Task 3
+  - Task 1. System Architecture Documentation:
+      - Overview: task1/index.md  # Ensure a separate index.md for this section
+      - Architecture:
+          - System Components: task1/architecture/system_components.md
+          - Partner Management Model: task1/architecture/partner_management.md
+          - User Management Model: task1/architecture/user_management.md
+      - Why Multi-Tenancy?: task1/why_multi_tenancy.md
+      - Multi-Tenancy and User Roles:
+          - Multi-Tenancy & Data Isolation: task1/security/multi_tenancy.md
+          - User Roles and Transitions: task1/security/rbac.md
+      - Session Management and Limits:
+          - Session Management Policy: task1/sessions/session_management_policy.md
+          - Guest Session Management: task1/sessions/guest_session_management.md
+          - Basic Session Management: task1/sessions/basic_session_management.md
+      - Subscription Management:
+          - Subscription Plans and User Types: task1/subscriptions/subscription_plans.md
+          - Plan Availability & Partner Restrictions: task1/subscriptions/plan_restrictions.md
+          - Subscription Lifecycle: task1/subscriptions/subscription_lifecycle.md
+  - Task 2. API Specification: task2/index.md
+  - Task 3. Text Editing Exercise: task3/index.md

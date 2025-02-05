@@ -1,0 +1,1235 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../multi_tenancy/">
+      
+      
+        <link rel="next" href="../../sessions/session_management_policy/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+    
+    
+      
+        <title>User Roles and Transitions - Technical Writer Assignment</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-roles-and-transitions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Technical Writer Assignment" class="md-header__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technical Writer Assignment
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Roles and Transitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Technical Writer Assignment" class="md-nav__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Technical Writer Assignment
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Task 1. System Architecture Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Task 1. System Architecture Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/system_components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/partner_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partner Management Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/user_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Management Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../why_multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why Multi-Tenancy?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy and User Roles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Multi-Tenancy and User Roles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_tenancy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multi-Tenancy & Data Isolation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    User Roles and Transitions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    User Roles and Transitions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key User Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-and-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions and Access Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-transition-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Transition Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Transitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downgrade-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downgrade Criteria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-role-enforcement-in-the-multi-tenant-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Role Enforcement in the Multi-Tenant System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-role-based-access-policy-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Role-Based Access Policy (JSON)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Sections
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Session Management and Limits
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Session Management and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/session_management_policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Session Management Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/guest_session_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guest Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sessions/basic_session_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Subscription Management
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Subscription Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subscriptions/subscription_plans/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subscription Plans and User Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subscriptions/plan_restrictions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan Availability & Partner Restrictions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subscriptions/subscription_lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subscription Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 2. API Specification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Task 3. Text Editing Exercise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key User Roles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-and-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions and Access Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-transition-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Transition Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Transitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downgrade-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downgrade Criteria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-role-enforcement-in-the-multi-tenant-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Role Enforcement in the Multi-Tenant System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-role-based-access-policy-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Role-Based Access Policy (JSON)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Sections
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-roles-and-transitions"><strong>User Roles and Transitions</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p>User roles define the <strong>access permissions, session policies, and transition rules</strong> for users across multiple partners. The system allows <strong>role-based access control (RBAC) while maintaining flexibility</strong> for partner-specific configurations.</p>
+<p>The <strong>User Roles and Transitions model</strong> ensures that:</p>
+<ul>
+<li><strong>Users have the least privileges necessary</strong> for their role.</li>
+<li><strong>Partners can customize role-based access</strong> within their environments.</li>
+<li><strong>Dynamic role transitions</strong> allow users to <strong>upgrade or downgrade based on predefined conditions</strong>.</li>
+</ul>
+<hr />
+<h2 id="key-user-roles"><strong>Key User Roles</strong></h2>
+<p>Each user is assigned a <strong>role</strong> that determines their <strong>permissions and operational limits</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Role</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Permissions &amp; Restrictions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Guest</strong></td>
+<td>Temporary user with limited access.</td>
+<td>- <strong>Session expiry:</strong> 20 min <br> - <strong>Daily limit:</strong> 5 operations <br> - <strong>Weekly limit:</strong> 20 operations <br> - <strong>Upgrade to Basic after KYC</strong></td>
+</tr>
+<tr>
+<td><strong>Basic</strong></td>
+<td>Verified user after KYC approval.</td>
+<td>- <strong>Session expiry:</strong> On inactivity (partner-defined) <br> - <strong>Daily limit:</strong> 20 operations <br> - <strong>Weekly limit:</strong> 50 operations <br> - <strong>Eligible for Advanced upgrade</strong></td>
+</tr>
+<tr>
+<td><strong>Advanced</strong></td>
+<td>Fully verified user with unrestricted access to system resources.</td>
+<td>- No session/operation limits <br>- Access to features is determined by partner policies <br> - Eligible for Company upgrade</td>
+</tr>
+<tr>
+<td><strong>Company</strong></td>
+<td>Enterprise-level user with expanded permissions.</td>
+<td>- No session/operation limits <br> - Access to features is determined by partner policies <br> - Highest level of access allowed per partner configuration</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td>System administrator.</td>
+<td>- Cannot subscribe to plans <br> - Manages system settings &amp; user permissions</td>
+</tr>
+</tbody>
+</table>
+<p>Each <strong>partner can customize role configurations</strong> based on their specific business needs.</p>
+<hr />
+<h2 id="permissions-and-access-control"><strong>Permissions and Access Control</strong></h2>
+<p>Permissions determine <strong>what actions a user can perform</strong>, classified into:</p>
+<ul>
+<li><strong>General Access</strong> – Ability to <strong>log in, reset passwords, and access dashboards</strong>.</li>
+<li><strong>Operational Controls</strong> – Execution of <strong>transactions, API calls, and system actions</strong>.</li>
+<li><strong>Administrative Privileges</strong> – <strong>Managing users, adjusting configurations, and accessing reports</strong>.</li>
+</ul>
+<p>Permissions are <strong>partner-defined</strong> and <strong>enforced dynamically</strong> within the system.</p>
+<hr />
+<h2 id="role-transition-model"><strong>Role Transition Model</strong></h2>
+<p>Users can <strong>move between roles</strong> based on <strong>verification, system limits, or administrative approvals</strong>.</p>
+<p><img src="data:image/png;base64,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" class="uml" alt="uml diagram" title="" /></p>
+<hr />
+<h2 id="role-transitions"><strong>Role Transitions</strong></h2>
+<ul>
+<li><strong>Guest</strong> users must <strong>pass KYC verification</strong> to upgrade to <strong>Basic</strong>.</li>
+<li>
+<p><strong>Basic</strong> users can upgrade to <strong>Advanced</strong> if allowed by <strong>partner policies</strong>.</p>
+</li>
+<li>
+<p>Partners may require <strong>Advanced KYC verification</strong> to ensure compliance.  </p>
+</li>
+<li>Some partners may offer <strong>subscription-based upgrades</strong> to unlock <strong>Advanced</strong> status.  </li>
+<li>
+<p>Certain partners may allow an <strong>automatic upgrade</strong> based on <strong>user activity or transaction volume</strong>.</p>
+</li>
+<li>
+<p><strong>Advanced</strong> users can transition to <strong>Company</strong> status if they meet <strong>enterprise-level requirements</strong>.</p>
+</li>
+<li>
+<p>This may include <strong>business verification, corporate onboarding, or admin approval</strong>.</p>
+</li>
+</ul>
+<hr />
+<h2 id="downgrade-criteria"><strong>Downgrade Criteria</strong></h2>
+<p>A user may be downgraded under the following conditions:</p>
+<ul>
+<li><strong>Failure to Maintain Compliance</strong> → If a KYC or verification document expires or is revoked.</li>
+<li><strong>Manual Downgrade</strong> → If an admin manually revokes access due to policy enforcement.</li>
+<li><strong>Subscription Expiry (if applicable)</strong> → If a role is tied to subscription status and the user fails to renew.</li>
+<li><strong>Partner-Defined Policies</strong> → Certain partners may implement additional downgrade conditions based on security or business needs.</li>
+</ul>
+<blockquote>
+<p><strong>Inactivity does not trigger a downgrade</strong> but simply <strong>terminates sessions, requiring users to log in again</strong>.</p>
+</blockquote>
+<p>Each partner can define their own downgrade policies while maintaining global security and compliance standards.</p>
+<hr />
+<h2 id="user-role-enforcement-in-the-multi-tenant-system"><strong>User Role Enforcement in the Multi-Tenant System</strong></h2>
+<p>RBAC is implemented at <strong>multiple levels</strong> to ensure <strong>security and isolation</strong> across partners.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Enforcement Layer</strong></th>
+<th><strong>Mechanism</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Application Layer</strong></td>
+<td><strong>Role-based UI rendering</strong> (users only see features they have access to)</td>
+</tr>
+<tr>
+<td><strong>API Layer</strong></td>
+<td><strong>Role-scoped API permissions</strong> (users can only call endpoints they are authorized for)</td>
+</tr>
+<tr>
+<td><strong>Database Layer</strong></td>
+<td><strong>Row-Level Security (RLS)</strong> (data access limited based on user role &amp; tenant ID)</td>
+</tr>
+<tr>
+<td><strong>Session Layer</strong></td>
+<td><strong>Enforced session limits</strong> for Guest &amp; Basic users</td>
+</tr>
+</tbody>
+</table>
+<p>All <strong>role-based controls are dynamically applied</strong> based on the <strong>user’s session, role, and partner settings</strong>.</p>
+<hr />
+<h2 id="example-role-based-access-policy-json"><strong>Example Role-Based Access Policy (JSON)</strong></h2>
+<p>Role-based access controls (RBAC) are managed by the Session &amp; Usage Policy Manager, ensuring enforcement of session limits, role transitions, and API access policies.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;basic&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;view_dashboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;execute_transactions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;manage_users&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;api_access_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;limited&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;session_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;inactivity_timeout_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max_operations_per_day&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max_operations_per_week&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Each partner can override role-based rules to meet their security and operational requirements.</p>
+<hr />
+<h2 id="summary"><strong>Summary</strong></h2>
+<p>The <strong>User Roles and Transitions model</strong> ensures that <strong>multi-tenant environments maintain structured access control</strong> while allowing <strong>customization per partner</strong>. By enforcing <strong>least privilege, dynamic role transitions, and session limits</strong>, the system:</p>
+<ul>
+<li><strong>Prevents unauthorized access</strong> to sensitive features.</li>
+<li><strong>Supports scalable multi-tenant role management</strong>.</li>
+<li><strong>Allows role upgrades and downgrades</strong> based on compliance, policies, and user actions.</li>
+</ul>
+<hr />
+<h2 id="related-sections"><strong>Related Sections</strong></h2>
+<ul>
+<li><a href="../users/user_status_transitions.md">User Role Transitions</a></li>
+<li><a href="../multi_tenancy/">Partner-Specific Isolation</a></li>
+<li><a href="../../architecture/user_management/">User Management Model</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5090c770.min.js"></script>
+      
+    
+  </body>
+</html>

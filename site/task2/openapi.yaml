@@ -1,0 +1,558 @@
+openapi: 3.0.3
+info:
+  title: User and Subscription API
+  version: 1.0.0
+  description: >
+    API for managing users, partners, subscription plans, and the subscription lifecycle.
+    This specification includes endpoints for retrieving user details, partner information,
+    managing subscription plans (creation, update, deletion), and handling user subscriptions.
+servers:
+  - url: https://api.example.com
+    description: Production API Server
+tags:
+  - name: User
+    description: Operations related to users.
+  - name: Partner
+    description: Operations related to partners.
+  - name: Subscription Plans
+    description: Manage subscription plans.
+  - name: Subscription
+    description: User subscription lifecycle operations.
+paths:
+  /api/external/user:
+    get:
+      tags:
+        - User
+      summary: Get user details
+      description: Retrieve user information by user ID, provider ID, or via pagination.
+      operationId: getUser
+      parameters:
+        - name: user_id
+          in: query
+          description: Unique user identifier (optional).
+          schema:
+            type: string
+            minLength: 7
+            maxLength: 7
+          example: "3453255"
+        - name: from
+          in: query
+          description: Pagination start timestamp (in nanoseconds).
+          schema:
+            type: integer
+        - name: to
+          in: query
+          description: Pagination end timestamp (in nanoseconds).
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Limit of records to return (default is 1000).
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 1000
+            default: 1000
+        - name: provider_id
+          in: query
+          description: Unique partner identifier (optional).
+          schema:
+            type: string
+            minLength: 4
+            maxLength: 4
+          example: "2323"
+      responses:
+        "200":
+          description: User details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                    description: Unique user identifier.
+                    minLength: 7
+                    maxLength: 7
+                    example: "3453255"
+                  provider_id:
+                    type: string
+                    description: Unique identifier of the partner a user is bound to.
+                    minLength: 4
+                    maxLength: 4
+                    example: "2323"
+                  status:
+                    type: string
+                    description: User service state.
+                    enum: ["active", "inactive", "idle"]
+                    example: "active"
+                  type:
+                    type: string
+                    description: User type.
+                    enum: ["basic", "guest", "company", "advanced", "admin"]
+                    example: "basic"
+                  zone:
+                    type: string
+                    description: User's region of residence (ISO 3166 Alpha-2 country code).
+                    pattern: "^[a-z]{2}$"
+                    example: "us"
+        "400":
+          description: Bad Request - Invalid parameters.
+        "404":
+          description: User not found.
+
+# Example usage:
+# curl -X GET https://api.example.com/api/external/user?user_id=5478485&limit=100
+
+  /api/partner:
+    get:
+      tags:
+        - Partner
+      summary: Get partner details
+      description: Retrieve details about a specific partner.
+      operationId: getPartner
+      security:
+        - basicAuth: []  # Enforce Basic Authentication as per example request
+      parameters:
+        - name: provider_id
+          in: query
+          required: true
+          description: Unique partner identifier.
+          schema:
+            type: string
+            minLength: 4
+            maxLength: 4
+          example: "2323"
+        - name: status
+          in: query
+          description: Partner operation state.
+          schema:
+            type: string
+            enum: ["active", "stopped"]
+          example: "active"
+      responses:
+        "200":
+          description: Partner details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  provider_id:
+                    type: string
+                    description: Unique partner identifier.
+                    minLength: 4
+                    maxLength: 4
+                    example: "2323"
+                  status:
+                    type: string
+                    description: Partner operation state.
+                    enum: ["active", "stopped"]
+                    example: "active"
+        "400":
+          description: Bad Request - Invalid parameters.
+        "404":
+          description: Partner not found.
+
+# Example usage:
+# curl -X GET -H "Authorization: Basic YXBkdXJlcjphcGlkl2Q=" https://api.example.com/api/partner?provider_id=6578
+
+
+  /api/subscriptions/plans:
+    get:
+      tags:
+        - Subscription Plans
+      summary: Get available subscription plans
+      description: >
+        Retrieve a list of subscription plans based on the user's provider and the mapping of available user types.
+        Plans are filtered by provider and optionally by user types (allowed values: basic, company, advanced).
+      operationId: getSubscriptionPlans
+      parameters:
+        - name: provider_id
+          in: query
+          description: Unique partner identifier.
+          schema:
+            type: string
+            minLength: 4
+            maxLength: 4
+          example: "2323"
+        - name: user_types
+          in: query
+          description: >
+            Comma-separated list of user types to filter available subscription plans.
+            Allowed values: basic, company, advanced.
+          schema:
+            type: string
+            pattern: "^(basic|company|advanced)(,(basic|company|advanced))*$"
+          example: "basic,company"
+      responses:
+        "200":
+          description: Subscription plans retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubscriptionPlan'
+        "400":
+          description: Bad Request - Invalid parameters.
+
+    post:
+      tags:
+        - Subscription Plans
+      summary: Create a new subscription plan
+      description: Create a new subscription plan. Requires Basic Authentication.
+      operationId: createSubscriptionPlan
+      security:
+        - basicAuth: []
+      requestBody:
+        required: true
+        description: Subscription plan details.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Enterprise Plan"
+                available_for:
+                  type: array
+                  description: List of user types for which the plan is available.
+                  items:
+                    type: string
+                    enum: [basic, company, advanced]
+                  example: [ "basic", "company" ]
+      responses:
+        "201":
+          description: Subscription plan created successfully.
+        "400":
+          description: Bad Request - Invalid input.
+        "401":
+          description: Unauthorized.
+
+  /api/subscriptions/plans/{plan_id}:
+    put:
+      tags:
+        - Subscription Plans
+      summary: Update an existing subscription plan
+      description: Modify an existing subscription plan. Requires Basic Authentication.
+      operationId: updateSubscriptionPlan
+      security:
+        - basicAuth: []
+      parameters:
+        - name: plan_id
+          in: path
+          required: true
+          description: Unique identifier for the subscription plan.
+          schema:
+            type: string
+          example: "plan_001"
+      requestBody:
+        required: true
+        description: Updated subscription plan details.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Updated Plan Name"
+                available_for:
+                  type: array
+                  description: Updated list of user types.
+                  items:
+                    type: string
+                    enum: [basic, company, advanced]
+                  example: ["company", "advanced"]
+      responses:
+        "200":
+          description: Subscription plan updated successfully.
+        "400":
+          description: Bad Request - Invalid input.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Subscription plan not found.
+
+    delete:
+      tags:
+        - Subscription Plans
+      summary: Delete a subscription plan
+      description: Removes an existing subscription plan. Requires Basic Authentication.
+      operationId: deleteSubscriptionPlan
+      security:
+        - basicAuth: []
+      parameters:
+        - name: plan_id
+          in: path
+          required: true
+          description: Unique identifier for the subscription plan.
+          schema:
+            type: string
+          example: "plan_001"
+      responses:
+        "204":
+          description: Subscription plan deleted successfully (no content).
+        "400":
+          description: Bad Request - Invalid request.
+        "401":
+          description: Unauthorized.
+        "403":
+          description: Forbidden - Insufficient permissions.
+        "404":
+          description: Subscription plan not found.
+
+      
+  /api/subscriptions/{user_id}/subscribe/{plan_id}:
+  post:
+    tags:
+      - Subscription
+    summary: Subscribe user to a plan
+    description: >
+      Initiates a subscription for a user. This action changes the user’s `status` to `"signing"`
+      until a separate confirmation is received.
+    operationId: subscribeUser
+    requestBody:
+      required: true
+      description: Subscription initiation details.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user_id:
+                type: string
+                example: "3453255"
+              plan_id:
+                type: string
+                example: "plan_001"
+    responses:
+      "200":
+        description: Subscription initiated successfully.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  example: "signing"
+      "400":
+        description: Bad Request - Invalid input.
+
+  /api/subscriptions/{user_id}/confirm/{plan_id}:
+  post:
+    tags:
+      - Subscription
+    summary: Confirm a user’s subscription
+    description: >
+      Confirms the subscription, thereby changing the user’s `sub_status` from `"unsigned"` to `"signed"`.
+      The `status` remains unchanged.
+    operationId: confirmSubscription
+    requestBody:
+      required: true
+      description: Subscription confirmation details.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user_id:
+                type: string
+                example: "3453255"
+              plan_id:
+                type: string
+                example: "plan_001"
+              confirmation_code:
+                type: string
+                description: The confirmation code sent to the user.
+                example: "ABC123"
+    responses:
+      "200":
+        description: Subscription confirmed successfully.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sub_status:
+                  type: string
+                  enum: [signed]
+                  example: "signed"
+      "400":
+        description: Bad Request - Invalid input.
+      "404":
+        description: Subscription not found or invalid confirmation code.
+
+    /api/subscriptions/status:
+  get:
+    tags:
+      - Subscription
+    summary: Get user's subscription status
+    description: Retrieve the subscription status of a specific user.
+    operationId: getUserSubscriptionStatus
+    parameters:
+      - name: user_id
+        in: query
+        required: true
+        description: Unique user identifier.
+        schema:
+          type: string
+          minLength: 7
+          maxLength: 7
+        example: "3453255"
+    responses:
+      "200":
+        description: Subscription status retrieved successfully.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  example: "3453255"
+                sub_status:
+                  type: string
+                  enum: [signed, unsigned, absent]
+                  example: "signed"
+      "400":
+        description: Bad Request - Invalid user ID.
+      "404":
+        description: User not found or no subscription available.
+
+  /api/subscriptions/{user_id}/unsubscribe:
+    post:
+      tags:
+        - Subscription
+      summary: Cancel a user's subscription
+      description: >
+        Cancels an active subscription for a user. This action updates the user's subscription status to `unsigned`.
+      operationId: unsubscribeUser
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: Unique user identifier.
+          schema:
+            type: string
+            minLength: 7
+            maxLength: 7
+          example: "3453255"
+      responses:
+        "200":
+          description: Subscription successfully canceled.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                    example: "3453255"
+                  sub_status:
+                    type: string
+                    enum: [unsigned]
+                    example: "unsigned"
+        "400":
+          description: Bad Request - Invalid user ID or no active subscription.
+        "404":
+          description: User not found or subscription not found.
+
+
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    User:
+      type: object
+      properties:
+        user_id:
+          type: string
+          example: "3453255"
+        provider_id:
+          type: string
+          example: "2323"
+        status:
+          type: string
+          description: User service state.
+          enum: [active, inactive, idle, signing]
+          example: "active"
+        type:
+          type: string
+          description: User type.
+          enum: [basic, guest, company, advanced, admin]
+          example: "basic"
+        zone:
+          type: string
+          description: User's region (ISO 3166 Alpha-2 code).
+          example: "us"
+        sub_status:
+          type: string
+          description: User's subscription status.
+          enum: [signed, unsigned, absent]
+          example: "unsigned"
+
+    Partner:
+      type: object
+      properties:
+        provider_id:
+          type: string
+          description: Unique partner identifier.
+          example: "2323"
+        name:
+          type: string
+          description: Partner business name.
+          example: "Acme Corp"
+        status:
+          type: string
+          description: Partner operation state.
+          enum: ["active", "stopped"]
+          example: "active"
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the partner was onboarded.
+          example: "2024-06-15T10:00:00Z"
+
+    SubscriptionPlan:
+      type: object
+      properties:
+        plan_id:
+          type: string
+          description: Unique identifier for the subscription plan.
+          example: "plan_001"
+        name:
+          type: string
+          description: Name of the subscription plan.
+          example: "Premium"
+        provider_id:
+          type: string
+          description: Identifier of the partner offering the plan.
+          example: "2323"
+        available_for:
+          type: array
+          description: List of user roles eligible for this plan.
+          items:
+            type: string
+            enum: ["basic", "company", "advanced"]
+          example: ["basic", "company"]
+        price:
+          type: number
+          format: float
+          description: Price of the subscription plan.
+          example: 9.99
+        billing_cycle:
+          type: string
+          description: Billing frequency of the subscription.
+          enum: ["monthly", "yearly"]
+          example: "monthly"
+        active:
+          type: boolean
+          description: Indicates whether the plan is currently active.
+          example: true
