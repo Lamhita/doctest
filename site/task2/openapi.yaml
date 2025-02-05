@@ -306,106 +306,17 @@ paths:
 
       
   /api/subscriptions/{user_id}/subscribe/{plan_id}:
-  post:
-    tags:
-      - Subscription
-    summary: Subscribe user to a plan
-    description: >
-      Initiates a subscription for a user. This action changes the user’s `status` to `"signing"`
-      until a separate confirmation is received.
-    operationId: subscribeUser
-    requestBody:
-      required: true
-      description: Subscription initiation details.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              user_id:
-                type: string
-                example: "3453255"
-              plan_id:
-                type: string
-                example: "plan_001"
-    responses:
-      "200":
-        description: Subscription initiated successfully.
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                status:
-                  type: string
-                  example: "signing"
-      "400":
-        description: Bad Request - Invalid input.
-
-  /api/subscriptions/{user_id}/confirm/{plan_id}:
-  post:
-    tags:
-      - Subscription
-    summary: Confirm a user’s subscription
-    description: >
-      Confirms the subscription, thereby changing the user’s `sub_status` from `"unsigned"` to `"signed"`.
-      The `status` remains unchanged.
-    operationId: confirmSubscription
-    requestBody:
-      required: true
-      description: Subscription confirmation details.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              user_id:
-                type: string
-                example: "3453255"
-              plan_id:
-                type: string
-                example: "plan_001"
-              confirmation_code:
-                type: string
-                description: The confirmation code sent to the user.
-                example: "ABC123"
-    responses:
-      "200":
-        description: Subscription confirmed successfully.
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sub_status:
-                  type: string
-                  enum: [signed]
-                  example: "signed"
-      "400":
-        description: Bad Request - Invalid input.
-      "404":
-        description: Subscription not found or invalid confirmation code.
-
-    /api/subscriptions/status:
-  get:
-    tags:
-      - Subscription
-    summary: Get user's subscription status
-    description: Retrieve the subscription status of a specific user.
-    operationId: getUserSubscriptionStatus
-    parameters:
-      - name: user_id
-        in: query
+    post:
+      tags:
+        - Subscription
+      summary: Subscribe user to a plan
+      description: >
+        Initiates a subscription for a user. This action changes the user’s `status` to `"signing"`
+        until a separate confirmation is received.
+      operationId: subscribeUser
+      requestBody:
         required: true
-        description: Unique user identifier.
-        schema:
-          type: string
-          minLength: 7
-          maxLength: 7
-        example: "3453255"
-    responses:
-      "200":
-        description: Subscription status retrieved successfully.
+        description: Subscription initiation details.
         content:
           application/json:
             schema:
@@ -414,14 +325,103 @@ paths:
                 user_id:
                   type: string
                   example: "3453255"
-                sub_status:
+                plan_id:
                   type: string
-                  enum: [signed, unsigned, absent]
-                  example: "signed"
-      "400":
-        description: Bad Request - Invalid user ID.
-      "404":
-        description: User not found or no subscription available.
+                  example: "plan_001"
+      responses:
+        "200":
+          description: Subscription initiated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "signing"
+        "400":
+          description: Bad Request - Invalid input.
+
+  /api/subscriptions/{user_id}/confirm/{plan_id}:
+    post:
+      tags:
+        - Subscription
+      summary: Confirm a user’s subscription
+      description: >
+        Confirms the subscription, thereby changing the user’s `sub_status` from `"unsigned"` to `"signed"`.
+        The `status` remains unchanged.
+      operationId: confirmSubscription
+      requestBody:
+        required: true
+        description: Subscription confirmation details.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  example: "3453255"
+                plan_id:
+                  type: string
+                  example: "plan_001"
+                confirmation_code:
+                  type: string
+                  description: The confirmation code sent to the user.
+                  example: "ABC123"
+      responses:
+        "200":
+          description: Subscription confirmed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sub_status:
+                    type: string
+                    enum: [signed]
+                    example: "signed"
+        "400":
+          description: Bad Request - Invalid input.
+        "404":
+          description: Subscription not found or invalid confirmation code.
+
+  /api/subscriptions/status:
+    get:
+      tags:
+        - Subscription
+      summary: Get user's subscription status
+      description: Retrieve the subscription status of a specific user.
+      operationId: getUserSubscriptionStatus
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          description: Unique user identifier.
+          schema:
+            type: string
+            minLength: 7
+            maxLength: 7
+          example: "3453255"
+      responses:
+        "200":
+          description: Subscription status retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                    example: "3453255"
+                  sub_status:
+                    type: string
+                    enum: [signed, unsigned, absent]
+                    example: "signed"
+        "400":
+          description: Bad Request - Invalid user ID.
+        "404":
+          description: User not found or no subscription available.
 
   /api/subscriptions/{user_id}/unsubscribe:
     post:
@@ -460,8 +460,6 @@ paths:
           description: Bad Request - Invalid user ID or no active subscription.
         "404":
           description: User not found or subscription not found.
-
-
 
 components:
   securitySchemes:
