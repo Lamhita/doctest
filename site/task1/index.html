@@ -20,7 +20,7 @@
     
     
       
-        <title>Overview - Technical Writer Assignment</title>
+        <title>Introduction - Technical Writer Assignment</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Introduction
             
           </span>
         </div>
@@ -263,7 +263,7 @@
           
   
   <span class="md-ellipsis">
-    Overview
+    Introduction
     
   </span>
   
@@ -275,7 +275,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Introduction
     
   </span>
   
@@ -327,75 +327,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Table of Contents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. System Overview
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-why-multi-tenancy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Why Multi-Tenancy?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-multi-tenancy-and-user-roles" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Multi-Tenancy and User Roles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-session-management-and-limits" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Session Management and Limits
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-subscription-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Subscription Management
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
   
 </li>
       
@@ -966,75 +897,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Table of Contents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-system-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. System Overview
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-why-multi-tenancy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Why Multi-Tenancy?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-multi-tenancy-and-user-roles" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Multi-Tenancy and User Roles
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-session-management-and-limits" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Session Management and Limits
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-subscription-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Subscription Management
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#license-and-ownership" class="md-nav__link">
     <span class="md-ellipsis">
       License and Ownership
@@ -1059,74 +921,37 @@
 
 
 
-<h1 id="system-architecture-documentation"><strong>System Architecture Documentation</strong></h1>
+<h1 id="system-architecture-documentation">System Architecture Documentation</h1>
 <h2 id="introduction">Introduction</h2>
-<p>At [CompanyName], we power a system designed to serve multiple partners (providers) under a unified platform. Each partner maintains its own user base, and our architecture enables them to individually configure user roles, permissions, and service plans to meet their unique business requirements. In addition to core multi-tenant design principles, our solution incorporates robust subscription management capabilities. Partners can create and manage subscription plans—each with configurable parameters and user type mappings—while users benefit from an enhanced experience through additional profile attributes (such as subscription status) and a clearly defined subscription lifecycle.</p>
+<p>At [CompanyName], we provide a multi-tenant system designed to serve multiple partners (providers) under a unified platform. Each partner maintains its own user base, with configurable user roles, permissions, and service plans tailored to their business needs.</p>
+<p>Our architecture follows core multi-tenancy principles and incorporates robust subscription management. Partners can create and manage subscription plans with flexible parameters and user type mappings. Users benefit from an improved experience with additional profile attributes, such as subscription status, and a structured subscription lifecycle.</p>
 <h3 id="who-should-read-this">Who Should Read This?</h3>
 <p>This document is intended for:</p>
 <ul>
-<li><strong>Backend Engineers</strong> → To understand multi-tenancy, user roles, access control, and the subscription management workflow.</li>
-<li><strong>Product Managers</strong> → To gain clarity on how features (including subscription options) can be enabled or disabled per partner.</li>
-<li><strong>Support &amp; Operations Teams</strong> → To diagnose issues related to user permissions, subscription statuses, and feature availability.</li>
-<li><strong>API Developers &amp; Partners</strong> → To integrate effectively with our partner-specific subscription APIs and understand the underlying architecture.</li>
+<li><strong>Backend Engineers</strong> – To understand multi-tenancy, user roles, access control, and subscription workflows.  </li>
+<li><strong>Product Managers</strong> – To see how features, including subscription options, can be enabled or restricted per partner.  </li>
+<li><strong>Support &amp; Operations Teams</strong> – To diagnose issues related to user permissions, subscription statuses, and feature availability.  </li>
+<li><strong>API Developers &amp; Partners</strong> – To integrate effectively with our partner-specific subscription APIs and understand the system architecture.  </li>
 </ul>
 <h3 id="common-challenges-why-this-document-matters">Common Challenges &amp; Why This Document Matters</h3>
-<p>In our fast-paced multi-tenant environment, teams sometimes encounter:</p>
+<p>In a multi-tenant system, teams often encounter:</p>
 <ul>
 <li>
-<p><strong>Role &amp; Permission Ambiguity:</strong><br />
-  Variations in subscription plans and role assignments across partners can lead to confusion.</p>
+<p><strong>Role &amp; Permission Ambiguity</strong><br />
+  Variations in subscription plans and role assignments across partners can lead to confusion.  </p>
 </li>
 <li>
-<p><strong>Complex Access Control and Subscription Logic:</strong><br />
-  The nuances of partner isolation and subscription state transitions aren’t always clear, making troubleshooting more challenging.</p>
+<p><strong>Complex Access Control &amp; Subscription Logic</strong><br />
+  Understanding the nuances of partner isolation and subscription state transitions can make troubleshooting more challenging.  </p>
 </li>
 <li>
-<p><strong>Onboarding and Debugging Delays:</strong><br />
-  Without centralized documentation, new engineers and support teams face delays in understanding system behavior and resolving issues.</p>
+<p><strong>Onboarding &amp; Debugging Delays</strong><br />
+  Without centralized documentation, new engineers and support teams struggle to understand system behavior and resolve issues efficiently.  </p>
 </li>
 </ul>
-<p>This document consolidates our architecture knowledge—covering user management, access control, session policies, and subscription management—to streamline onboarding, enhance cross-team communication, and accelerate problem resolution.</p>
+<p>This document consolidates our architectural knowledge, covering user management, access control, session policies, and subscription management. It is designed to streamline onboarding, enhance cross-team communication, and accelerate problem resolution.</p>
 <hr />
-<h2 id="table-of-contents"><strong>Table of Contents</strong></h2>
-<h3 id="1-system-overview"><strong>1. System Overview</strong></h3>
-<ul>
-<li><a href="architecture/system_components/">System Components</a></li>
-<li><a href="architecture/partner_management/">Partner Management Model</a></li>
-<li><a href="architecture/user_management/">User Management Model</a></li>
-</ul>
-<h3 id="2-why-multi-tenancy"><strong>2. Why Multi-Tenancy?</strong></h3>
-<ul>
-<li><a href="why_multi_tenancy/">Understanding Multi-Tenant Architecture</a></li>
-</ul>
-<h3 id="3-multi-tenancy-and-user-roles"><strong>3. Multi-Tenancy and User Roles</strong></h3>
-<ul>
-<li><a href="security/multi_tenancy/">Multi-Tenancy &amp; Data Isolation</a></li>
-<li><a href="security/rbac/">User Roles and Transitions</a></li>
-</ul>
-<h3 id="4-session-management-and-limits"><strong>4. Session Management and Limits</strong></h3>
-<ul>
-<li><a href="sessions/session_management_policy/">Session Management Policy</a></li>
-<li><a href="sessions/guest_session_management/">Guest Session Management</a></li>
-<li><a href="sessions/basic_session_management/">Basic Session Management</a></li>
-</ul>
-<h3 id="5-subscription-management"><strong>5. Subscription Management</strong></h3>
-<ul>
-<li><a href="subscriptions/subscription_plans/">Subscription Plans and User Types</a></li>
-<li><a href="subscriptions/plan_restrictions/">Plan Availability &amp; Partner Restrictions</a></li>
-<li><a href="subscriptions/subscription_lifecycle/">Subscription Lifecycle</a></li>
-</ul>
-<hr />
-<h2 id="next-steps"><strong>Next Steps</strong></h2>
-<p>This document serves as an <strong>internal reference</strong> for understanding:</p>
-<ul>
-<li><strong>Architecture, session limits, and multi-tenancy constraints</strong></li>
-<li><strong>Role-based access control (RBAC) and user transitions</strong></li>
-<li><strong>Subscription management and enforcement per partner</strong></li>
-</ul>
-<p>For detailed explanations, refer to the linked sections.</p>
-<hr />
-<h2 id="license-and-ownership"><strong>License and Ownership</strong></h2>
+<h2 id="license-and-ownership">License and Ownership</h2>
 <p>© 2025 CompanyName. Internal use only.</p>
 
 

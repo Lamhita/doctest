@@ -128,8 +128,8 @@ The **partner-controlled enforcement mechanisms** allow **customization while ma
 For more details on **user transitions, RBAC, and subscription management**, see:
 
 - [User Roles & Transitions](../security/rbac.md)
-- [Subscription Plans & Partner Restrictions](../subscriptions/plan-restrictions.md)
-- [Subscription Lifecycle](../subscriptions/subscription-lifecycle.md)
+- [Subscription Plans & Partner Restrictions](../subscriptions/plan_restrictions.md)
+- [Subscription Lifecycle](../subscriptions/subscription_lifecycle.md)
 
 ---
 

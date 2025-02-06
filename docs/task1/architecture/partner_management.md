@@ -13,20 +13,25 @@ The **Partner Management Model** defines how different partners (providers) inte
 ## **Key Components**
 
 ### **1. Partner Registry**
+
    - Stores all **registered partners** with metadata, including:
+
      - **Partner ID**
      - **Business Name**
      - **Onboarding Date**
      - **Status (active, stopped)**
+     
    - Maintains **partner lifecycle state**, allowing updates or deactivation.
 
 ### **2. Partner Configuration Manager**
+
    - Controls **feature toggles** per partner.
    - Defines **available user roles**, **RBAC policies**, and **session limits**.
    - Configures **subscription plans** that a partner can offer to their users.
    - Allows **custom policy enforcement**, such as **rate-limiting or API access control**.
 
 #### **Feature Toggles (Feature Flags)**
+
 Feature toggles (also known as **feature flags**) allow dynamic **enabling or disabling of system functionalities** per partner without modifying the core application logic. They are used for:
 
 - **Customizing feature availability per partner** (e.g., enabling beta features for select partners).
@@ -36,6 +41,7 @@ Feature toggles (also known as **feature flags**) allow dynamic **enabling or di
 Feature toggles are stored in the **Partner Configuration Manager** and applied dynamically via **RBAC and API Gateway rules**.
 
 ##### **Example Use Case:**
+
 - Partner A has **Feature X** enabled, while Partner B does not.
 - Partner C gets access to an **early release of Feature Y** before a global rollout.
 
@@ -59,16 +65,22 @@ Feature toggles provide flexibility, allowing partners to experiment with and co
    - Applies **rate limits and security policies** per partner.
 
 ### **5. Subscription & Service Plan Control**
+
    - Defines which **subscription plans** are **available per partner**.
    - Manages **plan restrictions** for eligible user roles (`basic`, `company`, `advanced`).  
+
      - **Guest users must first complete KYC** to become eligible for subscription plans.  
+
    - Ensures **real-time enforcement** of subscription policies, including:  
+
      - **Subscription initiation & confirmation** (`signing → confirmed`).  
      - **Suspension of subscriptions** (e.g., due to non-payment or policy violations).  
+
    - Limits **plan availability** based on **partner-specific configurations**.
 
 
 ### **6. Data Isolation Layer**
+
    - Implements **logical** or **physical** separation of partner data.
    - Uses **tenant-aware schemas** or **row-level security (RLS)**.
    - Prevents **cross-tenant access**, ensuring strict data security.
@@ -111,6 +123,7 @@ APIGW --> DIL : Enforce data isolation policies
 ---
 
 ## **Summary**
+
 The **Partner Management Model** ensures:
 
 ✅ **Strict isolation** between partner users and configurations.  

@@ -254,7 +254,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Introduction
     
   </span>
   
@@ -1104,14 +1104,18 @@
 <h2 id="key-components"><strong>Key Components</strong></h2>
 <h3 id="1-partner-registry"><strong>1. Partner Registry</strong></h3>
 <ul>
-<li>Stores all <strong>registered partners</strong> with metadata, including:<ul>
+<li>
+<p>Stores all <strong>registered partners</strong> with metadata, including:</p>
+<ul>
 <li><strong>Partner ID</strong></li>
 <li><strong>Business Name</strong></li>
 <li><strong>Onboarding Date</strong></li>
 <li><strong>Status (active, stopped)</strong></li>
 </ul>
 </li>
-<li>Maintains <strong>partner lifecycle state</strong>, allowing updates or deactivation.</li>
+<li>
+<p>Maintains <strong>partner lifecycle state</strong>, allowing updates or deactivation.</p>
+</li>
 </ul>
 <h3 id="2-partner-configuration-manager"><strong>2. Partner Configuration Manager</strong></h3>
 <ul>
@@ -1159,16 +1163,22 @@
 <h3 id="5-subscription-service-plan-control"><strong>5. Subscription &amp; Service Plan Control</strong></h3>
 <ul>
 <li>Defines which <strong>subscription plans</strong> are <strong>available per partner</strong>.</li>
-<li>Manages <strong>plan restrictions</strong> for eligible user roles (<code>basic</code>, <code>company</code>, <code>advanced</code>).  <ul>
+<li>
+<p>Manages <strong>plan restrictions</strong> for eligible user roles (<code>basic</code>, <code>company</code>, <code>advanced</code>).  </p>
+<ul>
 <li><strong>Guest users must first complete KYC</strong> to become eligible for subscription plans.  </li>
 </ul>
 </li>
-<li>Ensures <strong>real-time enforcement</strong> of subscription policies, including:  <ul>
+<li>
+<p>Ensures <strong>real-time enforcement</strong> of subscription policies, including:  </p>
+<ul>
 <li><strong>Subscription initiation &amp; confirmation</strong> (<code>signing → confirmed</code>).  </li>
 <li><strong>Suspension of subscriptions</strong> (e.g., due to non-payment or policy violations).  </li>
 </ul>
 </li>
-<li>Limits <strong>plan availability</strong> based on <strong>partner-specific configurations</strong>.</li>
+<li>
+<p>Limits <strong>plan availability</strong> based on <strong>partner-specific configurations</strong>.</p>
+</li>
 </ul>
 <h3 id="6-data-isolation-layer"><strong>6. Data Isolation Layer</strong></h3>
 <ul>

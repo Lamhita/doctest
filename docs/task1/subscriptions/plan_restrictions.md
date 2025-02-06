@@ -104,5 +104,5 @@ SC --> PS : Unsubscribe (`unsigned`)
 
 For more details, see:
 
-- [Subscription Plans and User Types](./subscription-plans.md)
-- [Subscription Lifecycle](./subscription-lifecycle.md)
+- [Subscription Plans and User Types](./subscription_plans.md)
+- [Subscription Lifecycle](./subscription_lifecycle.md)

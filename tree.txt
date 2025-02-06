@@ -1,0 +1,123 @@
+.
+├── docs
+│   ├── index.md
+│   ├── task1
+│   │   ├── architecture
+│   │   │   ├── partner_management.md
+│   │   │   ├── system_components.md
+│   │   │   └── user_management.md
+│   │   ├── index.md
+│   │   ├── security
+│   │   │   ├── multi_tenancy.md
+│   │   │   └── rbac.md
+│   │   ├── sessions
+│   │   │   ├── basic_session_management.md
+│   │   │   ├── guest_session_management.md
+│   │   │   └── session_management_policy.md
+│   │   ├── subscriptions
+│   │   │   ├── plan_restrictions.md
+│   │   │   ├── subscription_lifecycle.md
+│   │   │   └── subscription_plans.md
+│   │   └── why_multi_tenancy.md
+│   ├── task2
+│   │   ├── index.md
+│   │   └── openapi.yaml
+│   └── task3
+│       └── index.md
+├── mkdocs.yml
+├── README.md
+├── site
+│   ├── 404.html
+│   ├── assets
+│   │   ├── images
+│   │   │   └── favicon.png
+│   │   ├── javascripts
+│   │   │   ├── bundle.5090c770.min.js
+│   │   │   ├── bundle.5090c770.min.js.map
+│   │   │   ├── lunr
+│   │   │   │   ├── min
+│   │   │   │   │   ├── lunr.ar.min.js
+│   │   │   │   │   ├── lunr.da.min.js
+│   │   │   │   │   ├── lunr.de.min.js
+│   │   │   │   │   ├── lunr.du.min.js
+│   │   │   │   │   ├── lunr.el.min.js
+│   │   │   │   │   ├── lunr.es.min.js
+│   │   │   │   │   ├── lunr.fi.min.js
+│   │   │   │   │   ├── lunr.fr.min.js
+│   │   │   │   │   ├── lunr.he.min.js
+│   │   │   │   │   ├── lunr.hi.min.js
+│   │   │   │   │   ├── lunr.hu.min.js
+│   │   │   │   │   ├── lunr.hy.min.js
+│   │   │   │   │   ├── lunr.it.min.js
+│   │   │   │   │   ├── lunr.ja.min.js
+│   │   │   │   │   ├── lunr.jp.min.js
+│   │   │   │   │   ├── lunr.kn.min.js
+│   │   │   │   │   ├── lunr.ko.min.js
+│   │   │   │   │   ├── lunr.multi.min.js
+│   │   │   │   │   ├── lunr.nl.min.js
+│   │   │   │   │   ├── lunr.no.min.js
+│   │   │   │   │   ├── lunr.pt.min.js
+│   │   │   │   │   ├── lunr.ro.min.js
+│   │   │   │   │   ├── lunr.ru.min.js
+│   │   │   │   │   ├── lunr.sa.min.js
+│   │   │   │   │   ├── lunr.stemmer.support.min.js
+│   │   │   │   │   ├── lunr.sv.min.js
+│   │   │   │   │   ├── lunr.ta.min.js
+│   │   │   │   │   ├── lunr.te.min.js
+│   │   │   │   │   ├── lunr.th.min.js
+│   │   │   │   │   ├── lunr.tr.min.js
+│   │   │   │   │   ├── lunr.vi.min.js
+│   │   │   │   │   └── lunr.zh.min.js
+│   │   │   │   ├── tinyseg.js
+│   │   │   │   └── wordcut.js
+│   │   │   └── workers
+│   │   │       ├── search.f8cc74c7.min.js
+│   │   │       └── search.f8cc74c7.min.js.map
+│   │   └── stylesheets
+│   │       ├── main.a40c8224.min.css
+│   │       ├── main.a40c8224.min.css.map
+│   │       ├── palette.06af60db.min.css
+│   │       └── palette.06af60db.min.css.map
+│   ├── index.html
+│   ├── search
+│   │   └── search_index.json
+│   ├── sitemap.xml
+│   ├── sitemap.xml.gz
+│   ├── task1
+│   │   ├── architecture
+│   │   │   ├── partner_management
+│   │   │   │   └── index.html
+│   │   │   ├── system_components
+│   │   │   │   └── index.html
+│   │   │   └── user_management
+│   │   │       └── index.html
+│   │   ├── index.html
+│   │   ├── security
+│   │   │   ├── multi_tenancy
+│   │   │   │   └── index.html
+│   │   │   └── rbac
+│   │   │       └── index.html
+│   │   ├── sessions
+│   │   │   ├── basic_session_management
+│   │   │   │   └── index.html
+│   │   │   ├── guest_session_management
+│   │   │   │   └── index.html
+│   │   │   └── session_management_policy
+│   │   │       └── index.html
+│   │   ├── subscriptions
+│   │   │   ├── plan_restrictions
+│   │   │   │   └── index.html
+│   │   │   ├── subscription_lifecycle
+│   │   │   │   └── index.html
+│   │   │   └── subscription_plans
+│   │   │       └── index.html
+│   │   └── why_multi_tenancy
+│   │       └── index.html
+│   ├── task2
+│   │   ├── index.html
+│   │   └── openapi.yaml
+│   └── task3
+│       └── index.html
+└── tree.txt
+
+36 directories, 84 files

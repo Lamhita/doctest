@@ -146,6 +146,5 @@ The **User Roles and Transitions model** ensures that **multi-tenant environment
 
 ## **Related Sections**
 
-- [User Role Transitions](../users/user_status_transitions.md)
 - [Partner-Specific Isolation](../security/multi_tenancy.md)
 - [User Management Model](../architecture/user_management.md)

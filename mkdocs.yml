@@ -22,7 +22,7 @@ markdown_extensions:
 nav:
   - Home: index.md  # Main title page with Task 1, Task 2, Task 3
   - Task 1. System Architecture Documentation:
-      - Overview: task1/index.md  # Ensure a separate index.md for this section
+      - Introduction: task1/index.md  # Ensure a separate index.md for this section
       - Architecture:
           - System Components: task1/architecture/system_components.md
           - Partner Management Model: task1/architecture/partner_management.md

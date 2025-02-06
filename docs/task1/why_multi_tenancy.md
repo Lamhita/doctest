@@ -22,7 +22,7 @@ To ensure full separation between partners and their users, the system:
 
 - Ensures compliance with **security and data protection policies**.
 
-- See: [User Management Model](../architecture/user_management.md).
+- See: [User Management Model](./architecture/user_management.md).
 
 ---
 
@@ -40,7 +40,7 @@ To support the flexibility of different partners, the system:
 
 - Supports **feature toggles** to let partners enable/disable **specific functionalities**.
 
-- See: [User Roles and Transitions](../security/rbac.md).
+- See: [User Roles and Transitions](./security/rbac.md).
 
 ---
 
@@ -56,7 +56,7 @@ To ensure subscription services are adaptable to each partner's needs, the syste
 
 - Applies **multi-tenancy rules to subscription lifecycle management** without disrupting other tenants.
 
-- See: [Subscription & Service Plan Control](../subscriptions/plan-restrictions.md).
+- See: [Subscription & Service Plan Control](./subscriptions/plan_restrictions.md).
 
 ---
 
@@ -82,7 +82,7 @@ To optimize infrastructure and operational management, the system:
 
 - Implements **rate limiting & session control** per tenant to **prevent system abuse**.
 
-  - See: [Session Management Policy](../sessions/session-management-policy.md).
+  - See: [Session Management Policy](./sessions/session_management_policy.md).
 
 ---
 
@@ -98,7 +98,7 @@ To ensure strong security and regulatory compliance, the system:
 
 - Ensures compliance with **GDPR, SOC 2**, and other **security regulations** through **strict audit policies**.
 
-- See: [Partner-Specific Isolation](../security/multi_tenancy.md).
+- See: [Partner-Specific Isolation](./security/multi_tenancy.md).
 
 ---
 
@@ -116,13 +116,13 @@ While multi-tenancy offers **significant advantages**, it also introduces certai
 
 These challenges are mitigated through:
 
-✅ **Strict RBAC policies**  
+- Strict RBAC policies
 
-✅ **Isolated data partitions**  
+- Isolated data partitions  
 
-✅ **Scalable authentication & session handling strategies**  
+- Scalable authentication & session handling strategies  
 
-✅ **Subscription-based access control policies**  
+- Subscription-based access control policies
 
 ---
 

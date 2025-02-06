@@ -119,4 +119,4 @@ The **Subscription Lifecycle** ensures a **structured, enforceable process** for
 
 For more details on subscription availability, see:
 
-- [Plan Availability & Partner Restrictions](../subscriptions/plan-restrictions.md)
+- [Plan Availability & Partner Restrictions](./plan_restrictions.md)

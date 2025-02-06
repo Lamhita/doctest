@@ -16,7 +16,7 @@ This section explains **how subscription plans are created, managed, and enforce
 ## **Subscription Plan Structure**
 
 Each subscription plan has **the following attributes**:
-
+  
 | **Attribute**       | **Description**                                               |
 |---------------------|---------------------------------------------------------------|
 | **Plan ID**        | Unique identifier for the subscription plan.                   |
@@ -122,6 +122,5 @@ Subscription plans provide a **structured, partner-managed way** for users to ac
 
 For implementation details, see:
 
-- [Subscription API](../api/subscription-api.md)
-- [User Role Transitions](../users/user_status_transitions.md)
+- [Subscription API](../../task2/index.md)
 - [Partner Management Model](../architecture/partner_management.md)

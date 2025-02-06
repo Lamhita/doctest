@@ -254,7 +254,7 @@
         
   
   <span class="md-ellipsis">
-    Overview
+    Introduction
     
   </span>
   
@@ -1035,7 +1035,7 @@
 <p>Ensures compliance with <strong>security and data protection policies</strong>.</p>
 </li>
 <li>
-<p>See: <a href="../architecture/user_management.md">User Management Model</a>.</p>
+<p>See: <a href="../architecture/user_management/">User Management Model</a>.</p>
 </li>
 </ul>
 <hr />
@@ -1058,7 +1058,7 @@
 <p>Supports <strong>feature toggles</strong> to let partners enable/disable <strong>specific functionalities</strong>.</p>
 </li>
 <li>
-<p>See: <a href="../security/rbac.md">User Roles and Transitions</a>.</p>
+<p>See: <a href="../security/rbac/">User Roles and Transitions</a>.</p>
 </li>
 </ul>
 <hr />
@@ -1078,7 +1078,7 @@
 <p>Applies <strong>multi-tenancy rules to subscription lifecycle management</strong> without disrupting other tenants.</p>
 </li>
 <li>
-<p>See: <a href="../subscriptions/plan-restrictions.md">Subscription &amp; Service Plan Control</a>.</p>
+<p>See: <a href="../subscriptions/plan_restrictions/">Subscription &amp; Service Plan Control</a>.</p>
 </li>
 </ul>
 <hr />
@@ -1109,7 +1109,7 @@
 <p>Implements <strong>rate limiting &amp; session control</strong> per tenant to <strong>prevent system abuse</strong>.</p>
 </li>
 <li>
-<p>See: <a href="../sessions/session-management-policy.md">Session Management Policy</a>.</p>
+<p>See: <a href="../sessions/session_management_policy/">Session Management Policy</a>.</p>
 </li>
 </ul>
 <hr />
@@ -1129,7 +1129,7 @@
 <p>Ensures compliance with <strong>GDPR, SOC 2</strong>, and other <strong>security regulations</strong> through <strong>strict audit policies</strong>.</p>
 </li>
 <li>
-<p>See: <a href="../security/multi_tenancy.md">Partner-Specific Isolation</a>.</p>
+<p>See: <a href="../security/multi_tenancy/">Partner-Specific Isolation</a>.</p>
 </li>
 </ul>
 <hr />
@@ -1166,10 +1166,20 @@
 </tbody>
 </table>
 <p>These challenges are mitigated through:</p>
-<p>✅ <strong>Strict RBAC policies</strong>  </p>
-<p>✅ <strong>Isolated data partitions</strong>  </p>
-<p>✅ <strong>Scalable authentication &amp; session handling strategies</strong>  </p>
-<p>✅ <strong>Subscription-based access control policies</strong>  </p>
+<ul>
+<li>
+<p>Strict RBAC policies</p>
+</li>
+<li>
+<p>Isolated data partitions  </p>
+</li>
+<li>
+<p>Scalable authentication &amp; session handling strategies  </p>
+</li>
+<li>
+<p>Subscription-based access control policies</p>
+</li>
+</ul>
 <hr />
 <h2 id="conclusion"><strong>Conclusion</strong></h2>
 <p>Multi-tenancy allows the system to <strong>efficiently serve multiple partners</strong> while maintaining <strong>data isolation, security, and scalability</strong>. By leveraging <strong>shared infrastructure with configurable user roles, authentication policies, subscription management, and access controls</strong>, the system remains <strong>cost-effective, customizable, and future-proof</strong>.</p>

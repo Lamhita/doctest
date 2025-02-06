@@ -29,7 +29,8 @@ paths:
       parameters:
         - name: user_id
           in: query
-          description: Unique user identifier (optional).
+          required: false  
+          description: Unique user identifier.
           schema:
             type: string
             minLength: 7
@@ -37,17 +38,20 @@ paths:
           example: "3453255"
         - name: from
           in: query
+          required: false  
           description: Pagination start timestamp (in nanoseconds).
           schema:
             type: integer
         - name: to
           in: query
+          required: false  
           description: Pagination end timestamp (in nanoseconds).
           schema:
             type: integer
         - name: limit
           in: query
-          description: Limit of records to return (default is 1000).
+          required: false  
+          description: Limit of records to return. Default is 1000.
           schema:
             type: integer
             minimum: 10
@@ -55,7 +59,8 @@ paths:
             default: 1000
         - name: provider_id
           in: query
-          description: Unique partner identifier (optional).
+          required: false  
+          description: Unique identifier of the partner the user is linked to.
           schema:
             type: string
             minLength: 4
@@ -67,42 +72,16 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  user_id:
-                    type: string
-                    description: Unique user identifier.
-                    minLength: 7
-                    maxLength: 7
-                    example: "3453255"
-                  provider_id:
-                    type: string
-                    description: Unique identifier of the partner a user is bound to.
-                    minLength: 4
-                    maxLength: 4
-                    example: "2323"
-                  status:
-                    type: string
-                    description: User service state.
-                    enum: ["active", "inactive", "idle"]
-                    example: "active"
-                  type:
-                    type: string
-                    description: User type.
-                    enum: ["basic", "guest", "company", "advanced", "admin"]
-                    example: "basic"
-                  zone:
-                    type: string
-                    description: User's region of residence (ISO 3166 Alpha-2 country code).
-                    pattern: "^[a-z]{2}$"
-                    example: "us"
+                $ref: "#/components/schemas/User"
         "400":
           description: Bad Request - Invalid parameters.
         "404":
           description: User not found.
 
+
+
 # Example usage:
-# curl -X GET https://api.example.com/api/external/user?user_id=5478485&limit=100
+  # curl -X GET https://api.example.com/api/external/user?user_id=5478485&limit=100
 
   /api/partner:
     get:
@@ -125,6 +104,7 @@ paths:
           example: "2323"
         - name: status
           in: query
+          required: false
           description: Partner operation state.
           schema:
             type: string
@@ -201,7 +181,10 @@ paths:
       tags:
         - Subscription Plans
       summary: Create a new subscription plan
-      description: Create a new subscription plan. Requires Basic Authentication.
+      description: |
+        Create a new subscription plan. Requires Basic Authentication. 
+
+        Note: The request body follows the same structure as the response from `GET /api/subscriptions/plans`.
       operationId: createSubscriptionPlan
       security:
         - basicAuth: []
@@ -215,21 +198,50 @@ paths:
               properties:
                 name:
                   type: string
-                  example: "Enterprise Plan"
+                  description: Human-readable name of the plan.
+                  example: "Premium"
+                provider_id:
+                  type: string
+                  description: Unique identifier of the partner creating the plan.
+                  example: "2323"
                 available_for:
                   type: array
-                  description: List of user types for which the plan is available.
+                  description: List of user roles eligible for this plan.
                   items:
                     type: string
                     enum: [basic, company, advanced]
-                  example: [ "basic", "company" ]
+                  example: ["basic", "company"]
+                price:
+                  type: number
+                  format: float
+                  description: Subscription price (if applicable).
+                  example: 9.99
+                billing_cycle:
+                  type: string
+                  description: Frequency of billing.
+                  enum: ["monthly", "yearly"]
+                  example: "monthly"
+                active:
+                  type: boolean
+                  description: Determines whether the plan is currently active.
+                  example: true
       responses:
         "201":
           description: Subscription plan created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan_id:
+                    type: string
+                    description: Unique identifier for the created subscription plan.
+                    example: "plan_001"
         "400":
           description: Bad Request - Invalid input.
         "401":
           description: Unauthorized.
+
 
   /api/subscriptions/plans/{plan_id}:
     put:

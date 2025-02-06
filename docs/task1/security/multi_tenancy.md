@@ -20,7 +20,7 @@ Additionally, **subscription plans** are mapped per partner, meaning:
 
 - A user’s **subscription status (`signing`, `confirmed`, `suspended`)** is **isolated within the partner context**.
 
-For details on **subscription plan mapping**, see [Subscription & Service Plan Control](../subscriptions/plan-restrictions.md).
+For details on **subscription plan mapping**, see [Subscription & Service Plan Control](../subscriptions/plan_restrictions.md).
 
 ---
 
@@ -94,7 +94,7 @@ To enforce partner-level request isolation:
   
   - **Partner’s authorization policies** before confirming a subscription.
 
-For API structure details, refer to [OpenAPI Specification](../task2/openapi.yaml).
+For API structure details, refer to [OpenAPI Specification](../../task2/openapi.yaml).
 
 ---
 
@@ -170,6 +170,6 @@ P3 --> DS : Query only Partner C Data
 
 - **[Multi-Tenancy Overview](../why_multi_tenancy.md)**
 
-- **[Plan Availability and Partner Restrictions](../subscriptions/plan-restrictions.md)**
+- **[Plan Availability and Partner Restrictions](../subscriptions/plan_restrictions.md)**
 
-- **[OpenAPI Specification](../task2/openapi.yaml)**
+- **[OpenAPI Specification](../../task2/openapi.yaml)**
