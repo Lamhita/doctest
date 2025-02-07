@@ -32,12 +32,9 @@ nav:
           - Multi-Tenancy & Data Isolation: task1/security/multi_tenancy.md
           - User Roles and Transitions: task1/security/rbac.md
       - Session Management and Limits:
-          - Session Management Policy: task1/sessions/session_management_policy.md
+          - Session Management Overview: task1/sessions/session_management_overview.md
           - Guest Session Management: task1/sessions/guest_session_management.md
           - Basic Session Management: task1/sessions/basic_session_management.md
-      - Subscription Management:
-          - Subscription Plans and User Types: task1/subscriptions/subscription_plans.md
-          - Plan Availability & Partner Restrictions: task1/subscriptions/plan_restrictions.md
-          - Subscription Lifecycle: task1/subscriptions/subscription_lifecycle.md
+      - Subscription Management And Lifecycle: task1/subscription_management.md
   - Task 2. API Specification: task2/index.md
   - Task 3. Text Editing Exercise: task3/index.md

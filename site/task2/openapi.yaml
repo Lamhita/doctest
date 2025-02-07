@@ -248,7 +248,10 @@ paths:
       tags:
         - Subscription Plans
       summary: Update an existing subscription plan
-      description: Modify an existing subscription plan. Requires Basic Authentication.
+      description: |
+        Modify an existing subscription plan. Requires Basic Authentication.
+
+        Note: The request body follows the same structure as the response from GET /api/subscriptions/plans.
       operationId: updateSubscriptionPlan
       security:
         - basicAuth: []
@@ -270,23 +273,75 @@ paths:
               properties:
                 name:
                   type: string
+                  description: Updated name of the subscription plan.
                   example: "Updated Plan Name"
                 available_for:
                   type: array
-                  description: Updated list of user types.
+                  description: Updated list of user roles allowed for this plan.
                   items:
                     type: string
                     enum: [basic, company, advanced]
                   example: ["company", "advanced"]
+                price:
+                  type: number
+                  format: float
+                  description: Updated price of the subscription plan.
+                  example: 12.99
+                billing_cycle:
+                  type: string
+                  description: Billing cycle for the subscription plan.
+                  enum: [monthly, yearly]
+                  example: "monthly"
+                active:
+                  type: boolean
+                  description: Whether the subscription plan is active.
+                  example: true
       responses:
         "200":
           description: Subscription plan updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan_id:
+                    type: string
+                    description: Unique identifier for the subscription plan.
+                    example: "plan_001"
+                  name:
+                    type: string
+                    description: Name of the subscription plan.
+                    example: "Updated Plan Name"
+                  provider_id:
+                    type: string
+                    description: Identifier for the provider managing this plan.
+                    example: "2323"
+                  available_for:
+                    type: array
+                    description: List of user roles eligible for this plan.
+                    items:
+                      type: string
+                    example: ["company", "advanced"]
+                  price:
+                    type: number
+                    format: float
+                    description: Price of the subscription plan.
+                    example: 12.99
+                  billing_cycle:
+                    type: string
+                    description: Subscription billing cycle.
+                    example: "monthly"
+                  active:
+                    type: boolean
+                    description: Indicates if the plan is active.
+                    example: true
         "400":
           description: Bad Request - Invalid input.
         "401":
           description: Unauthorized.
         "404":
           description: Subscription plan not found.
+
 
     delete:
       tags:
@@ -389,9 +444,12 @@ paths:
               schema:
                 type: object
                 properties:
+                  user_id:
+                    type: string
+                    example: "3453255"
                   sub_status:
                     type: string
-                    enum: [signed]
+                    enum: [signed, unsigned, absent]
                     example: "signed"
         "400":
           description: Bad Request - Invalid input.
@@ -505,7 +563,7 @@ components:
         sub_status:
           type: string
           description: User's subscription status.
-          enum: [signed, unsigned, absent]
+          enum: [signed, unsigned, suspended, absent]
           example: "unsigned"
 
     Partner:

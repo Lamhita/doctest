@@ -9,10 +9,10 @@ The system consists of several key components that provide multi-tenant function
 - Manages onboarding and configuration of partners (providers).  
 - Stores partner-specific settings, including:  
 
-  - User roles and feature toggles.  
-  - Branding and operational limits.  
-  - Subscription plan availability.  
-  
+    - User roles and their associated feature toggles.  
+    - Branding and operational limits.  
+    - Subscription plans available for different user types.  
+
 - Ensures tenant isolation, preventing one partner’s configuration from affecting another.
 
 ---
@@ -21,9 +21,9 @@ The system consists of several key components that provide multi-tenant function
 
 - Maintains user records across multiple partners.  
 - Controls roles, statuses, and permissions based on partner-defined policies.  
-- Enforces role-based access control (RBAC) for feature restrictions.  
-- Tracks user subscription status, including transitions such as `signed` <-> `unsigned`.  
-- Synchronizes user status with subscription states through the subscription management service.
+- Enforces role-based access control (RBAC) for user types.  
+- Manages user state transitions.
+- Manages user subscription states via the subscription management service.
 
 ---
 
@@ -31,9 +31,11 @@ The system consists of several key components that provide multi-tenant function
 
 - Monitors active sessions and usage limits.  
 - Enforces session expiration policies, including:  
+
   - Guest session timeout (20-minute limit).  
   - Basic user inactivity timeouts (configurable per partner).  
-  - Restricted state enforcement for users exceeding limits.  
+  - Enforcement of restricted states for users exceeding operational limits.  
+
 - Ensures compliance with partner-specific session rules.
 
 ---
@@ -43,18 +45,22 @@ The system consists of several key components that provide multi-tenant function
 - Handles subscription lifecycle events, including:  
 
   - Plan creation, updates, and deletions.  
-  - Subscription initiation and confirmation (`signing → signed`).  
+  - Subscription initiation and confirmation.  
   - Suspension due to non-payment or policy violations.  
 
 - Limits plan availability to specific user roles as defined by the partner.  
-- Synchronizes subscription status transitions.  
-- Works with user management to update user status based on subscription changes.
+- Tracks subscription state transitions.
+- Interacts with user management to update user status when a subscription is initiated or confirmed.
 
 ---
 
 ## KYC & Verification Service
 
-- Provides identity verification for user upgrades from `guest` to `basic` or `advanced`.  
+- Provides identity verification for user type upgrades, including:  
+
+    - `guest → basic`  
+    - `basic → advanced`  
+
 - Integrates with internal and external verification sources.  
 - Supports re-verification workflows when required.
 
@@ -62,7 +68,11 @@ The system consists of several key components that provide multi-tenant function
 
 ## Data Storage & Isolation Layer
 
-- Ensures partner data separation using tenant-aware schemas and row-level security (RLS).  
+- Ensures partner data separation using:  
+
+    - Tenant-aware schemas  
+    - Row-level security (RLS)  
+
 - Prevents data leakage between tenants.  
 - Supports multi-region data storage for compliance with local regulations.
 
@@ -108,3 +118,15 @@ KYC --> UM : Verification results
 
 @enduml
 ```
+
+---
+
+## Related Sections:
+
+- [Partner Management Model](partner_management.md)
+- [User Management Model](user_management.md)
+
+
+---
+
+© 2025 CompanyName. Internal use only.

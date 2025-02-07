@@ -499,18 +499,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#challenges-of-multi-tenancy" class="md-nav__link">
+  <a href="#related-sections" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges of Multi-Tenancy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
+      Related Sections:
     </span>
   </a>
   
@@ -656,11 +647,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../sessions/session_management_policy/" class="md-nav__link">
+      <a href="../sessions/session_management_overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Session Management Policy
+    Session Management Overview
     
   </span>
   
@@ -729,105 +720,17 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Subscription Management
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6">
-            <span class="md-nav__icon md-icon"></span>
-            Subscription Management
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../subscriptions/subscription_plans/" class="md-nav__link">
+      <a href="../subscription_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Subscription Plans and User Types
+    Subscription Management And Lifecycle
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../subscriptions/plan_restrictions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Plan Availability & Partner Restrictions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../subscriptions/subscription_lifecycle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Subscription Lifecycle
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -978,18 +881,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#challenges-of-multi-tenancy" class="md-nav__link">
+  <a href="#related-sections" class="md-nav__link">
     <span class="md-ellipsis">
-      Challenges of Multi-Tenancy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusion
+      Related Sections:
     </span>
   </a>
   
@@ -1011,193 +905,90 @@
 
 
 
-<h1 id="understanding-the-multi-tenant-architecture"><strong>Understanding the Multi-Tenant Architecture</strong></h1>
-<h2 id="the-need-for-multi-tenancy"><strong>The Need for Multi-Tenancy</strong></h2>
-<p>In a system where multiple partners (providers) manage their own users, <strong>multi-tenancy</strong> is the most efficient way to maintain <strong>strict data separation</strong> while ensuring <strong>scalability, configurability, and security</strong>. Instead of deploying separate infrastructures for each partner, multi-tenancy allows a <strong>shared yet isolated</strong> environment for all tenants.</p>
+<h1 id="understanding-the-multi-tenant-architecture">Understanding the Multi-Tenant Architecture</h1>
+<h2 id="the-need-for-multi-tenancy">The Need for Multi-Tenancy</h2>
+<p>In a system where multiple partners (providers) manage their own users, multi-tenancy is an efficient way to maintain strict data separation while ensuring scalability, configurability, and security. Instead of deploying separate infrastructures for each partner, multi-tenancy allows a shared yet isolated environment for all tenants.</p>
 <p>Key reasons for adopting multi-tenancy in this system include:</p>
 <hr />
-<h3 id="1-strict-partner-data-user-isolation"><strong>1. Strict Partner Data &amp; User Isolation</strong></h3>
+<h3 id="1-strict-partner-data-user-isolation">1. Strict Partner Data &amp; User Isolation</h3>
 <p>To ensure full separation between partners and their users, the system:</p>
 <ul>
-<li>
-<p>Keeps each partner’s users and data <strong>completely isolated</strong>.</p>
-</li>
-<li>
-<p>Implements <strong>user segmentation</strong> to prevent cross-partner authentication.</p>
-</li>
-<li>
-<p>Prevents <strong>data leakage</strong> across different partners.</p>
-</li>
-<li>
-<p>Enforces <strong>Role-Based Access Control (RBAC)</strong> to apply <strong>partner-specific access policies</strong>.</p>
-</li>
-<li>
-<p>Ensures compliance with <strong>security and data protection policies</strong>.</p>
-</li>
-<li>
-<p>See: <a href="../architecture/user_management/">User Management Model</a>.</p>
-</li>
+<li>Keeps each partner’s users and data completely isolated.  </li>
+<li>Implements user segmentation to prevent cross-partner authentication.  </li>
+<li>Prevents data leakage across different partners.  </li>
+<li>Enforces Role-Based Access Control (RBAC) to apply partner-specific access policies.  </li>
+<li>Ensures compliance with security and data protection policies.  </li>
 </ul>
+<p>See: <a href="../architecture/user_management/">User Management Model</a>.</p>
 <hr />
-<h3 id="2-configurable-user-roles-feature-sets"><strong>2. Configurable User Roles &amp; Feature Sets</strong></h3>
+<h3 id="2-configurable-user-roles-feature-sets">2. Configurable User Roles &amp; Feature Sets</h3>
 <p>To support the flexibility of different partners, the system:</p>
 <ul>
 <li>
-<p>Provides <strong>multiple user roles</strong>, including:</p>
+<p>Provides multiple user roles (types), including:  </p>
 </li>
 <li>
-<p><code>guest</code>, <code>basic</code>, <code>advanced</code>, <code>company</code>, <code>admin</code>.</p>
+<p><code>guest</code>, <code>basic</code>, <code>advanced</code>, <code>company</code>, <code>admin</code>  </p>
 </li>
 <li>
-<p>Allows <strong>dynamic role configurations</strong> per partner.</p>
+<p>Allows dynamic role configurations per partner.  </p>
 </li>
-<li>
-<p>Enforces <strong>RBAC policies</strong> to manage <strong>granular access permissions</strong>.</p>
-</li>
-<li>
-<p>Supports <strong>feature toggles</strong> to let partners enable/disable <strong>specific functionalities</strong>.</p>
-</li>
-<li>
-<p>See: <a href="../security/rbac/">User Roles and Transitions</a>.</p>
-</li>
+<li>Enforces RBAC policies to manage granular access permissions.  </li>
+<li>Supports feature toggles to let partners enable or disable specific functionalities.  </li>
 </ul>
+<p>See: <a href="../security/rbac/">User Roles and Transitions</a>.</p>
 <hr />
-<h3 id="3-subscription-service-management"><strong>3. Subscription &amp; Service Management</strong></h3>
+<h3 id="3-subscription-service-management">3. Subscription &amp; Service Management</h3>
 <p>To ensure subscription services are adaptable to each partner's needs, the system:</p>
 <ul>
 <li>
-<p>Supports <strong>configurable subscription plans per partner</strong>, ensuring:</p>
+<p>Supports configurable subscription plans per partner, ensuring:  </p>
 </li>
 <li>
-<p><strong>Plan availability restrictions</strong> based on user roles.</p>
+<p>Plan availability restrictions based on user roles.  </p>
 </li>
 <li>
-<p><strong>Subscription workflows</strong> (<code>signing → confirmed → suspended</code>).</p>
+<p>Subscription workflows (<code>signing → signed → unsigned</code>).  </p>
 </li>
 <li>
-<p>Applies <strong>multi-tenancy rules to subscription lifecycle management</strong> without disrupting other tenants.</p>
-</li>
-<li>
-<p>See: <a href="../subscriptions/plan_restrictions/">Subscription &amp; Service Plan Control</a>.</p>
+<p>Applies multi-tenancy rules to subscription lifecycle management without disrupting other tenants.  </p>
 </li>
 </ul>
+<p>See: <a href="./subscriptions/plan_restrictions.md">Subscription &amp; Service Plan Control</a>.</p>
 <hr />
-<h3 id="4-scalability-without-redundant-deployments"><strong>4. Scalability Without Redundant Deployments</strong></h3>
+<h3 id="4-scalability-without-redundant-deployments">4. Scalability Without Redundant Deployments</h3>
 <p>To maintain high availability and scalability, the system:</p>
 <ul>
-<li>
-<p>Allows <strong>rapid onboarding</strong> of new partners <strong>without separate deployments</strong>.</p>
-</li>
-<li>
-<p>Reduces <strong>infrastructure duplication</strong> by <strong>leveraging shared resources</strong>.</p>
-</li>
-<li>
-<p>Ensures <strong>global system updates</strong> without affecting <strong>partner-specific configurations</strong>.</p>
-</li>
+<li>Allows rapid onboarding of new partners without separate deployments.  </li>
+<li>Reduces infrastructure duplication by leveraging shared resources.  </li>
+<li>Ensures system updates without affecting partner-specific configurations.  </li>
 </ul>
 <hr />
-<h3 id="5-operational-cost-efficiency"><strong>5. Operational &amp; Cost Efficiency</strong></h3>
+<h3 id="5-operational-cost-efficiency">5. Operational &amp; Cost Efficiency</h3>
 <p>To optimize infrastructure and operational management, the system:</p>
 <ul>
-<li>
-<p>Reduces <strong>infrastructure costs</strong>, <strong>manual overhead</strong>, and <strong>redundant resource allocation</strong>.</p>
-</li>
-<li>
-<p>Centralizes <strong>monitoring, updates, and maintenance</strong>, reducing <strong>administrative effort</strong>.</p>
-</li>
-<li>
-<p>Implements <strong>rate limiting &amp; session control</strong> per tenant to <strong>prevent system abuse</strong>.</p>
-</li>
-<li>
-<p>See: <a href="../sessions/session_management_policy/">Session Management Policy</a>.</p>
-</li>
+<li>Reduces infrastructure costs, manual overhead, and redundant resource allocation.  </li>
+<li>Centralizes monitoring, updates, and maintenance, reducing administrative effort.  </li>
+<li>Implements session control policies per tenant to prevent system abuse.  </li>
 </ul>
+<p>See: <a href="./sessions/session_management_policy.md">Session Management Policy</a>.</p>
 <hr />
-<h3 id="6-security-authentication-compliance"><strong>6. Security, Authentication &amp; Compliance</strong></h3>
+<h3 id="6-security-authentication-compliance">6. Security, Authentication &amp; Compliance</h3>
 <p>To ensure strong security and regulatory compliance, the system:</p>
 <ul>
-<li>
-<p>Enforces <strong>data segmentation</strong> across <strong>database, application, and API layers</strong>.</p>
-</li>
-<li>
-<p>Implements <strong>session management rules</strong> to <strong>prevent cross-tenant access issues</strong>.</p>
-</li>
-<li>
-<p>Uses <strong>RBAC enforcement</strong> to prevent unauthorized access across partners.</p>
-</li>
-<li>
-<p>Ensures compliance with <strong>GDPR, SOC 2</strong>, and other <strong>security regulations</strong> through <strong>strict audit policies</strong>.</p>
-</li>
-<li>
+<li>Enforces data segmentation across database, application, and API layers.  </li>
+<li>Implements session management rules to prevent cross-tenant access issues.  </li>
+<li>Uses RBAC enforcement to prevent unauthorized access across partners.  </li>
+</ul>
 <p>See: <a href="../security/multi_tenancy/">Partner-Specific Isolation</a>.</p>
-</li>
+<hr />
+<h2 id="related-sections">Related Sections:</h2>
+<ul>
+<li><a href="../security/multi_tenancy/">Multi-Tenancy</a></li>
+<li><a href="../architecture/user_management/">User Management</a></li>
 </ul>
 <hr />
-<h2 id="challenges-of-multi-tenancy"><strong>Challenges of Multi-Tenancy</strong></h2>
-<p>While multi-tenancy offers <strong>significant advantages</strong>, it also introduces certain complexities:</p>
-<table>
-<thead>
-<tr>
-<th><strong>Challenge</strong></th>
-<th><strong>Solution</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Data &amp; Access Control Complexity</strong></td>
-<td>Ensuring <strong>no cross-tenant data access</strong> through <strong>RBAC &amp; data isolation policies</strong>.</td>
-</tr>
-<tr>
-<td><strong>User Role Transitions</strong></td>
-<td><strong>Maintaining partner-specific role configurations</strong> while enforcing <strong>system-wide upgrade/downgrade rules</strong>.</td>
-</tr>
-<tr>
-<td><strong>Subscription &amp; Session Limits Per Partner</strong></td>
-<td>Ensuring <strong>subscription eligibility &amp; session management policies</strong> remain consistent.</td>
-</tr>
-<tr>
-<td><strong>Resource Allocation &amp; Performance</strong></td>
-<td><strong>Preventing a single partner from overloading shared infrastructure</strong>.</td>
-</tr>
-<tr>
-<td><strong>Feature Customization</strong></td>
-<td><strong>Balancing partner-specific feature toggles</strong> while <strong>rolling out global updates</strong>.</td>
-</tr>
-</tbody>
-</table>
-<p>These challenges are mitigated through:</p>
-<ul>
-<li>
-<p>Strict RBAC policies</p>
-</li>
-<li>
-<p>Isolated data partitions  </p>
-</li>
-<li>
-<p>Scalable authentication &amp; session handling strategies  </p>
-</li>
-<li>
-<p>Subscription-based access control policies</p>
-</li>
-</ul>
-<hr />
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>Multi-tenancy allows the system to <strong>efficiently serve multiple partners</strong> while maintaining <strong>data isolation, security, and scalability</strong>. By leveraging <strong>shared infrastructure with configurable user roles, authentication policies, subscription management, and access controls</strong>, the system remains <strong>cost-effective, customizable, and future-proof</strong>.</p>
-<p>For implementation details, refer to:</p>
-<ul>
-<li>
-<p><strong><a href="../security/multi_tenancy/">Multi-Tenancy &amp; Data Isolation</a></strong></p>
-</li>
-<li>
-<p><strong><a href="../security/rbac/">User Roles and Transitions</a></strong></p>
-</li>
-<li>
-<p><strong><a href="../architecture/user_management/">User Management Model</a></strong></p>
-</li>
-<li>
-<p><strong><a href="../subscriptions/plan_restrictions/">Plan Availability and Partner Restrictions</a></strong></p>
-</li>
-</ul>
+<p>© 2025 CompanyName. Internal use only.</p>
 
 
 

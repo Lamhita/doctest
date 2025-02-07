@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../task1/subscription_management/">
+        <link rel="prev" href="../../security/rbac/">
       
       
-        <link rel="next" href="../task3/">
+        <link rel="next" href="../guest_session_management/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
     
     
       
-        <title>Task 2. API Specification - Technical Writer Assignment</title>
+        <title>Session Management Overview - Technical Writer Assignment</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openapi-specification" class="md-skip">
+        <a href="#session-management-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Technical Writer Assignment" class="md-header__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+    <a href="../../.." title="Technical Writer Assignment" class="md-header__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task 2. API Specification
+              Session Management Overview
             
           </span>
         </div>
@@ -173,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Technical Writer Assignment" class="md-nav__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
+    <a href="../../.." title="Technical Writer Assignment" class="md-nav__button md-logo" aria-label="Technical Writer Assignment" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -209,17 +209,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -234,7 +236,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Task 1. System Architecture Documentation
@@ -248,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/architecture/system_components/" class="md-nav__link">
+      <a href="../../architecture/system_components/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -328,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/architecture/partner_management/" class="md-nav__link">
+      <a href="../../architecture/partner_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -350,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/architecture/user_management/" class="md-nav__link">
+      <a href="../../architecture/user_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -380,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/why_multi_tenancy/" class="md-nav__link">
+      <a href="../../why_multi_tenancy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/security/multi_tenancy/" class="md-nav__link">
+      <a href="../../security/multi_tenancy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -460,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/security/rbac/" class="md-nav__link">
+      <a href="../../security/rbac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,17 +489,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -512,7 +516,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Session Management and Limits
@@ -523,10 +527,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../task1/sessions/session_management_overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Session Management Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -536,6 +561,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guest-vs-basic-user-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guest vs. Basic User Sessions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-partners-influence-basic-user-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Partners Influence Basic User Sessions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -548,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/sessions/guest_session_management/" class="md-nav__link">
+      <a href="../guest_session_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -570,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/sessions/basic_session_management/" class="md-nav__link">
+      <a href="../basic_session_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/subscription_management/" class="md-nav__link">
+      <a href="../../subscription_management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -626,31 +698,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Task 2. API Specification
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../task2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,35 +711,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#openapi-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAPI Definitions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -700,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../task3/" class="md-nav__link">
+      <a href="../../../task3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -741,9 +763,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#openapi-definitions" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      OpenAPI Definitions
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guest-vs-basic-user-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guest vs. Basic User Sessions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-partners-influence-basic-user-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Partners Influence Basic User Sessions
     </span>
   </a>
   
@@ -765,20 +805,119 @@
 
 
 
-<h1 id="openapi-specification">OpenAPI Specification</h1>
-<p>This page renders the OpenAPI specification for the CompanyName's Multi-Tenant Architecture using Swagger UI.</p>
-<h2 id="openapi-definitions">OpenAPI Definitions</h2>
-<p><link type="text/css" rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"></p>
-<div id="swagger-ui-1">
-</div>
-<script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js" charset="UTF-8"></script>
-<script>
-    SwaggerUIBundle({
-      url: 'openapi.yaml',
-      dom_id: '#swagger-ui-1',
-    })
-</script>
-
+<h1 id="session-management-overview">Session Management Overview</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The system enforces <strong>role-based session policies</strong> to ensure <strong>security, resource efficiency, and compliance</strong>. Session management controls:</p>
+<ul>
+<li><strong>Session expiration rules</strong> – When and how sessions end.</li>
+<li><strong>Operation limits</strong> – The number of actions a user can perform.</li>
+<li><strong>Enforcement mechanisms</strong> – How the system responds when limits are exceeded.</li>
+</ul>
+<h2 id="guest-vs-basic-user-sessions">Guest vs. Basic User Sessions</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Factor</strong></th>
+<th><strong>Guest Users (System-Wide)</strong></th>
+<th><strong>Basic Users (Partner-Defined)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session Expiration</strong></td>
+<td>20 min per session</td>
+<td>Expires on inactivity (partner-defined)</td>
+</tr>
+<tr>
+<td><strong>Operation Limits</strong></td>
+<td>5 per day, 20 per week</td>
+<td>20 per day, 50 per week</td>
+</tr>
+<tr>
+<td><strong>Exceeding Limits Consequence</strong></td>
+<td>Idle State (No access until reset)</td>
+<td>Partner-defined enforcement (warnings, rate-limiting, feature restrictions)</td>
+</tr>
+<tr>
+<td><strong>Customization</strong></td>
+<td>Fixed across all partners</td>
+<td>Partners control restrictions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-partners-influence-basic-user-sessions">How Partners Influence Basic User Sessions</h2>
+<ul>
+<li>Unlike Guest users (who follow <strong>strict, system-wide rules</strong>), <strong>partners can define</strong>:</li>
+<li><strong>Custom session expiration settings</strong>.</li>
+<li><strong>Custom enforcement actions</strong> when limits are exceeded.</li>
+<li><strong>Extended session benefits for subscribed users</strong>.</li>
+</ul>
+<p>For detailed policies, see:</p>
+<ul>
+<li><a href="../guest_session_management/">Guest Session Management</a></li>
+<li><a href="../basic_session_management/">Basic Session Management</a></li>
+</ul>
+<h1 id="session-management-policy">Session Management Policy</h1>
+<h2 id="overview">Overview</h2>
+<p>Session management policies define how the system controls user sessions, operation limits, and enforcement mechanisms. These policies are essential for:</p>
+<ul>
+<li><strong>Security and fraud prevention</strong> – Protecting the system from abuse.  </li>
+<li><strong>Resource management</strong> – Ensuring fair usage across all users.  </li>
+<li><strong>User experience</strong> – Encouraging users to complete verification for a better experience.  </li>
+</ul>
+<p>Session management varies by user role:</p>
+<ul>
+<li><strong>Guest users</strong> – Subject to strict, system-wide restrictions to prevent abuse and encourage KYC verification.  </li>
+<li><strong>Basic users</strong> – Have more flexible, partner-defined restrictions as they are KYC-verified and considered lower risk.  </li>
+</ul>
+<p>This section explains the differences in session policies and the rationale behind enforcement mechanisms.</p>
+<hr />
+<h2 id="guest-users-stricter-system-wide-restrictions">Guest Users: Stricter System-Wide Restrictions</h2>
+<p>Guest users are unverified and potentially anonymous, presenting higher security risks such as:</p>
+<ul>
+<li><strong>Fraud and abuse prevention</strong> – Limits prevent spam account creation and system exploitation.  </li>
+<li><strong>Encouraging KYC verification</strong> – Strong restrictions incentivize users to upgrade to Basic status.  </li>
+<li><strong>Resource protection</strong> – Restricting session length and operation count prevents excessive system load.  </li>
+<li><strong>Universal enforcement across all partners</strong> – Ensuring consistent security measures for all Guest users.  </li>
+</ul>
+<h3 id="system-wide-controls-for-guest-users">System-Wide Controls for Guest Users</h3>
+<p>To address these risks, the system applies strict, non-configurable policies to all Guest users:</p>
+<ul>
+<li><strong>Short session duration</strong> – Sessions expire after <strong>20 minutes</strong>.  </li>
+<li><strong>Limited operations per day and per week</strong> – <strong>5 daily, 20 weekly</strong>.  </li>
+<li><strong>Automatic transition to Idle State</strong> when limits are exceeded.  </li>
+</ul>
+<blockquote>
+<p>Guest session policies are fixed across all partners and cannot be customized.</p>
+</blockquote>
+<hr />
+<h2 id="basic-users-more-flexible-partner-defined-restrictions">Basic Users: More Flexible, Partner-Defined Restrictions</h2>
+<p>Once a user completes KYC verification, they upgrade to Basic status, which lowers their risk profile. Basic users:</p>
+<ul>
+<li>Have verified identities, reducing the risk of fraudulent or anonymous activity.  </li>
+<li>Are more engaged with the platform and likely to be returning users.  </li>
+<li>May have different needs depending on the partner, requiring more flexibility in restrictions.  </li>
+</ul>
+<h3 id="partner-defined-controls-for-basic-users">Partner-Defined Controls for Basic Users</h3>
+<p>Because Basic users are verified, the system allows partners to define enforcement mechanisms when limits are exceeded. These may include:</p>
+<ul>
+<li><strong>Session expiration based on inactivity</strong> – Instead of a fixed 20-minute session, Basic users remain logged in until inactive beyond a partner-defined timeout.  </li>
+<li><strong>Higher operation limits</strong> – Partners can allow Basic users <strong>20 daily operations, 50 weekly</strong>.  </li>
+<li><strong>Warnings and soft enforcement</strong> – When a Basic user exceeds limits:<ul>
+<li>The system does not immediately block access.  </li>
+<li>The user receives a warning notification.  </li>
+<li>Some partners may apply rate-limiting, temporary restrictions, or manual review before restoring access.  </li>
+<li>If excessive usage persists, further action may be taken based on the partner's policies.  </li>
+</ul>
+</li>
+</ul>
+<p>This balances security with usability, allowing partners to manage risk while maintaining system-wide integrity.</p>
+<hr />
+<h2 id="related-sections">Related Sections:</h2>
+<ul>
+<li><a href="../basic_session_management/">Basic Session Management</a></li>
+<li><a href="../guest_session_management/">Guest Session Management</a></li>
+</ul>
 <hr />
 <p>© 2025 CompanyName. Internal use only.</p>
 
@@ -827,10 +966,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.5090c770.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5090c770.min.js"></script>
       
     
   </body>
