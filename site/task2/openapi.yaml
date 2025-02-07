@@ -361,7 +361,7 @@ paths:
           example: "plan_001"
       responses:
         "204":
-          description: Subscription plan deleted successfully (no content).
+          description: Subscription plan deleted successfully.
         "400":
           description: Bad Request - Invalid request.
         "401":

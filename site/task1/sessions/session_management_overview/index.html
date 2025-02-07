@@ -807,39 +807,39 @@
 
 <h1 id="session-management-overview">Session Management Overview</h1>
 <h2 id="introduction">Introduction</h2>
-<p>The system enforces <strong>role-based session policies</strong> to ensure <strong>security, resource efficiency, and compliance</strong>. Session management controls:</p>
+<p>The system enforces role-based session policies to ensure security, resource efficiency, and compliance. Session management controls:</p>
 <ul>
-<li><strong>Session expiration rules</strong> – When and how sessions end.</li>
-<li><strong>Operation limits</strong> – The number of actions a user can perform.</li>
-<li><strong>Enforcement mechanisms</strong> – How the system responds when limits are exceeded.</li>
+<li>Session expiration rules – When and how sessions end.</li>
+<li>Operation limits – The number of actions a user can perform.</li>
+<li>Enforcement mechanisms – How the system responds when limits are exceeded.</li>
 </ul>
 <h2 id="guest-vs-basic-user-sessions">Guest vs. Basic User Sessions</h2>
 <table>
 <thead>
 <tr>
-<th><strong>Factor</strong></th>
-<th><strong>Guest Users (System-Wide)</strong></th>
-<th><strong>Basic Users (Partner-Defined)</strong></th>
+<th>Factor</th>
+<th>Guest Users (System-Wide)</th>
+<th>Basic Users (Partner-Defined)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Session Expiration</strong></td>
+<td>Session Expiration</td>
 <td>20 min per session</td>
 <td>Expires on inactivity (partner-defined)</td>
 </tr>
 <tr>
-<td><strong>Operation Limits</strong></td>
+<td>Operation Limits</td>
 <td>5 per day, 20 per week</td>
 <td>20 per day, 50 per week</td>
 </tr>
 <tr>
-<td><strong>Exceeding Limits Consequence</strong></td>
-<td>Idle State (No access until reset)</td>
-<td>Partner-defined enforcement (warnings, rate-limiting, feature restrictions)</td>
+<td>Exceeding Limits Consequence</td>
+<td><code>idle</code> user state (No access until reset)</td>
+<td><code>suspended</code> subscription state (partner-defined criteria)</td>
 </tr>
 <tr>
-<td><strong>Customization</strong></td>
+<td>Customization</td>
 <td>Fixed across all partners</td>
 <td>Partners control restrictions</td>
 </tr>
@@ -847,76 +847,17 @@
 </table>
 <h2 id="how-partners-influence-basic-user-sessions">How Partners Influence Basic User Sessions</h2>
 <ul>
-<li>Unlike Guest users (who follow <strong>strict, system-wide rules</strong>), <strong>partners can define</strong>:</li>
-<li><strong>Custom session expiration settings</strong>.</li>
-<li><strong>Custom enforcement actions</strong> when limits are exceeded.</li>
-<li><strong>Extended session benefits for subscribed users</strong>.</li>
+<li>Unlike Guest users, who follow system-wide rules, partners can define:<ul>
+<li>Custom session expiration settings.</li>
+<li>Enforcement actions when limits are exceeded.</li>
+<li>Extended session benefits for subscribed users.</li>
+</ul>
+</li>
 </ul>
 <p>For detailed policies, see:</p>
 <ul>
 <li><a href="../guest_session_management/">Guest Session Management</a></li>
 <li><a href="../basic_session_management/">Basic Session Management</a></li>
-</ul>
-<h1 id="session-management-policy">Session Management Policy</h1>
-<h2 id="overview">Overview</h2>
-<p>Session management policies define how the system controls user sessions, operation limits, and enforcement mechanisms. These policies are essential for:</p>
-<ul>
-<li><strong>Security and fraud prevention</strong> – Protecting the system from abuse.  </li>
-<li><strong>Resource management</strong> – Ensuring fair usage across all users.  </li>
-<li><strong>User experience</strong> – Encouraging users to complete verification for a better experience.  </li>
-</ul>
-<p>Session management varies by user role:</p>
-<ul>
-<li><strong>Guest users</strong> – Subject to strict, system-wide restrictions to prevent abuse and encourage KYC verification.  </li>
-<li><strong>Basic users</strong> – Have more flexible, partner-defined restrictions as they are KYC-verified and considered lower risk.  </li>
-</ul>
-<p>This section explains the differences in session policies and the rationale behind enforcement mechanisms.</p>
-<hr />
-<h2 id="guest-users-stricter-system-wide-restrictions">Guest Users: Stricter System-Wide Restrictions</h2>
-<p>Guest users are unverified and potentially anonymous, presenting higher security risks such as:</p>
-<ul>
-<li><strong>Fraud and abuse prevention</strong> – Limits prevent spam account creation and system exploitation.  </li>
-<li><strong>Encouraging KYC verification</strong> – Strong restrictions incentivize users to upgrade to Basic status.  </li>
-<li><strong>Resource protection</strong> – Restricting session length and operation count prevents excessive system load.  </li>
-<li><strong>Universal enforcement across all partners</strong> – Ensuring consistent security measures for all Guest users.  </li>
-</ul>
-<h3 id="system-wide-controls-for-guest-users">System-Wide Controls for Guest Users</h3>
-<p>To address these risks, the system applies strict, non-configurable policies to all Guest users:</p>
-<ul>
-<li><strong>Short session duration</strong> – Sessions expire after <strong>20 minutes</strong>.  </li>
-<li><strong>Limited operations per day and per week</strong> – <strong>5 daily, 20 weekly</strong>.  </li>
-<li><strong>Automatic transition to Idle State</strong> when limits are exceeded.  </li>
-</ul>
-<blockquote>
-<p>Guest session policies are fixed across all partners and cannot be customized.</p>
-</blockquote>
-<hr />
-<h2 id="basic-users-more-flexible-partner-defined-restrictions">Basic Users: More Flexible, Partner-Defined Restrictions</h2>
-<p>Once a user completes KYC verification, they upgrade to Basic status, which lowers their risk profile. Basic users:</p>
-<ul>
-<li>Have verified identities, reducing the risk of fraudulent or anonymous activity.  </li>
-<li>Are more engaged with the platform and likely to be returning users.  </li>
-<li>May have different needs depending on the partner, requiring more flexibility in restrictions.  </li>
-</ul>
-<h3 id="partner-defined-controls-for-basic-users">Partner-Defined Controls for Basic Users</h3>
-<p>Because Basic users are verified, the system allows partners to define enforcement mechanisms when limits are exceeded. These may include:</p>
-<ul>
-<li><strong>Session expiration based on inactivity</strong> – Instead of a fixed 20-minute session, Basic users remain logged in until inactive beyond a partner-defined timeout.  </li>
-<li><strong>Higher operation limits</strong> – Partners can allow Basic users <strong>20 daily operations, 50 weekly</strong>.  </li>
-<li><strong>Warnings and soft enforcement</strong> – When a Basic user exceeds limits:<ul>
-<li>The system does not immediately block access.  </li>
-<li>The user receives a warning notification.  </li>
-<li>Some partners may apply rate-limiting, temporary restrictions, or manual review before restoring access.  </li>
-<li>If excessive usage persists, further action may be taken based on the partner's policies.  </li>
-</ul>
-</li>
-</ul>
-<p>This balances security with usability, allowing partners to manage risk while maintaining system-wide integrity.</p>
-<hr />
-<h2 id="related-sections">Related Sections:</h2>
-<ul>
-<li><a href="../basic_session_management/">Basic Session Management</a></li>
-<li><a href="../guest_session_management/">Guest Session Management</a></li>
 </ul>
 <hr />
 <p>© 2025 CompanyName. Internal use only.</p>

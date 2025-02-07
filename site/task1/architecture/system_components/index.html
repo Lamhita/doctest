@@ -919,7 +919,7 @@
 <li>Maintains user records across multiple partners.  </li>
 <li>Controls roles, statuses, and permissions based on partner-defined policies.  </li>
 <li>Enforces role-based access control (RBAC) for user types.  </li>
-<li>Manages user status transitions (active/inactive/idle).</li>
+<li>Manages user state transitions.</li>
 <li>Manages user subscription states via the subscription management service.</li>
 </ul>
 <hr />
@@ -956,20 +956,18 @@
 <li>
 <p>Limits plan availability to specific user roles as defined by the partner.  </p>
 </li>
-<li>Tracks subscription status transitions (signed/unsigned/absent)</li>
-<li>Interacts with user management to update user status when a subscription is initiated (<code>signing</code>) or confirmed.</li>
+<li>Tracks subscription state transitions.</li>
+<li>Interacts with user management to update user status when a subscription is initiated or confirmed.</li>
 </ul>
 <hr />
 <h2 id="kyc-verification-service">KYC &amp; Verification Service</h2>
 <ul>
 <li>
-<p>Provides identity verification for user upgrades from:  </p>
-</li>
-<li>
-<p><code>guest → basic</code>  </p>
-</li>
-<li>
-<p><code>basic → advanced</code>  </p>
+<p>Provides identity verification for user type upgrades, including:  </p>
+<ul>
+<li><code>guest → basic</code>  </li>
+<li><code>basic → advanced</code>  </li>
+</ul>
 </li>
 <li>
 <p>Integrates with internal and external verification sources.  </p>
@@ -981,12 +979,10 @@
 <ul>
 <li>
 <p>Ensures partner data separation using:  </p>
-</li>
-<li>
-<p>Tenant-aware schemas  </p>
-</li>
-<li>
-<p>Row-level security (RLS)  </p>
+<ul>
+<li>Tenant-aware schemas  </li>
+<li>Row-level security (RLS)  </li>
+</ul>
 </li>
 <li>
 <p>Prevents data leakage between tenants.  </p>

@@ -509,27 +509,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-data-isolation" class="md-nav__link">
+  <a href="#data-isolation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Data Isolation
+      Data Isolation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-user-base-segmentation" class="md-nav__link">
+  <a href="#user-base-segmentation" class="md-nav__link">
     <span class="md-ellipsis">
-      2. User Base Segmentation
+      User Base Segmentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-feature-access-configuration" class="md-nav__link">
+  <a href="#feature-access-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Feature &amp; Access Configuration
+      Feature &amp; Access Configuration
     </span>
   </a>
   
@@ -833,27 +833,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-data-isolation" class="md-nav__link">
+  <a href="#data-isolation" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Data Isolation
+      Data Isolation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-user-base-segmentation" class="md-nav__link">
+  <a href="#user-base-segmentation" class="md-nav__link">
     <span class="md-ellipsis">
-      2. User Base Segmentation
+      User Base Segmentation
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-feature-access-configuration" class="md-nav__link">
+  <a href="#feature-access-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Feature &amp; Access Configuration
+      Feature &amp; Access Configuration
     </span>
   </a>
   
@@ -909,7 +909,7 @@
 
 <h1 id="multi-tenancy-data-isolation">Multi-Tenancy &amp; Data Isolation</h1>
 <h2 id="overview">Overview</h2>
-<p>In a multi-tenant system, partner-specific isolation is a critical security and architectural requirement. Each partner (provider) has its own isolated user base, configurations, and data, ensuring that:</p>
+<p>In a multi-tenant system, partner-specific isolation is a crucial security and architectural requirement. Each partner (provider) has its own isolated user base, configurations, and data, ensuring that:</p>
 <ul>
 <li>Users from different partners never overlap.  </li>
 <li>Each partner’s access rules, feature sets, and user roles are independently configured.  </li>
@@ -921,19 +921,19 @@
 <li>Each partner controls which subscription plans are available to its users.  </li>
 <li>User role restrictions define eligibility for specific plans.  </li>
 </ul>
-<p>For details on subscription plan mapping, see <a href="../subscriptions/plan_restrictions.md">Subscription &amp; Service Plan Control</a>.</p>
+<p>For details on subscription plan mapping, see <a href="../../subscription_management/">Subscription Management and Lifecycle</a>.</p>
 <hr />
 <h2 id="key-principles-of-multi-tenant-isolation">Key Principles of Multi-Tenant Isolation</h2>
-<h3 id="1-data-isolation">1. Data Isolation</h3>
+<h3 id="data-isolation">Data Isolation</h3>
 <p>To prevent unintended access between tenants, the system enforces strict data segregation through:</p>
 <ul>
-<li><strong>Logical database separation</strong> → Each partner's data is tagged with a unique <code>partner_id</code>.  </li>
+<li><strong>Logical database separation</strong> → Each partner's data is tagged with a unique ID (<code>provider_id</code>).  </li>
 <li><strong>Row-Level Security (RLS)</strong> → Queries automatically filter data based on the authenticated partner.  </li>
 <li><strong>Scoped API requests</strong> → API responses are restricted to the requesting partner's context.  </li>
 <li><strong>Subscription plan data segmentation</strong> → Users can only subscribe to plans within their assigned partner.  </li>
 </ul>
 <hr />
-<h3 id="2-user-base-segmentation">2. User Base Segmentation</h3>
+<h3 id="user-base-segmentation">User Base Segmentation</h3>
 <p>To ensure that users remain within their designated tenant environments:</p>
 <ul>
 <li>Each partner defines its own set of users, including authentication rules and role configurations.  </li>
@@ -943,17 +943,17 @@
 </ul>
 <p>For more details, see <a href="../rbac/">User Roles and Transitions</a>.</p>
 <hr />
-<h3 id="3-feature-access-configuration">3. Feature &amp; Access Configuration</h3>
+<h3 id="feature-access-configuration">Feature &amp; Access Configuration</h3>
 <p>To provide partners with flexibility while maintaining isolation:</p>
 <ul>
 <li>Partners can enable or disable specific system features for their users.  </li>
 <li>Role-based access control (RBAC) enforces granular permissions per user, with role definitions configurable per partner.  </li>
-<li>KYC verification is required for users transitioning from Guest to Basic. Additional role upgrades (Basic to Advanced, Advanced to Company) may be subject to partner-specific policies.  </li>
+<li>KYC verification is required for users transitioning from <code>guest</code> to <code>basic</code>. Additional role upgrades (<code>basic</code> to <code>advanced</code>, <code>advanced</code> to <code>company</code>) may be subject to partner-specific policies.  </li>
 <li>
 <p>Subscription access is restricted based on partner-defined rules:  </p>
 <ul>
 <li>Which user roles can subscribe.  </li>
-<li>The subscription process flow (<code>signing → signed → unsigned</code>).  </li>
+<li>The subscription process flow (<code>signing → signed → suspended → unsigned</code>).  </li>
 </ul>
 </li>
 <li>

@@ -879,7 +879,7 @@
 
 <h1 id="guest-session-management">Guest Session Management</h1>
 <h2 id="overview">Overview</h2>
-<p>Guest users operate under <strong>strict, system-wide session policies</strong> to ensure security, prevent abuse, and encourage KYC verification. These restrictions apply uniformly across all partners and cannot be modified.</p>
+<p>Guest users operate under system-wide session policies to ensure security, prevent abuse, and encourage KYC verification. These restrictions apply uniformly across all partners and cannot be modified.</p>
 <p>The system enforces session duration limits, operation quotas, and idle state enforcement to:</p>
 <ul>
 <li>Prevent fraudulent or anonymous misuse of system resources.  </li>
@@ -890,27 +890,26 @@
 <hr />
 <h2 id="session-duration-limit">Session Duration Limit</h2>
 <ul>
-<li>Each session for a Guest user is limited to <strong>20 minutes</strong>.  </li>
-<li>After 20 minutes, the session <strong>automatically expires</strong>, requiring the user to <strong>log in again</strong>.  </li>
-<li>Sessions do not accumulate—users can start new sessions but must <strong>re-authenticate each time</strong>.  </li>
-<li>This prevents unverified users from maintaining persistent access, ensuring that periodic re-authentication is enforced.  </li>
+<li>Each session for a Guest user is limited to 20 minutes.  </li>
+<li>After 20 minutes, the session automatically expires, requiring the user to log in again.  </li>
+<li>This prevents unverified users from maintaining persistent access, ensuring periodic re-authentication.  </li>
 </ul>
 <hr />
 <h2 id="operation-quotas">Operation Quotas</h2>
 <p>Guest users are subject to strict operation quotas:</p>
 <ul>
-<li><strong>Maximum 5 operations per day.</strong>  </li>
-<li><strong>Maximum 20 operations in a rolling 7-day period.</strong>  </li>
-<li>Operations include <strong>API requests, transactions, and key system interactions</strong>.  </li>
+<li>Maximum 5 operations per day.  </li>
+<li>Maximum 20 operations in a rolling 7-day period.  </li>
+<li>Operations include API requests, transactions, and key system interactions.  </li>
 </ul>
-<p>If a Guest user exceeds any of these quotas, they <strong>immediately transition into Idle State</strong>.</p>
+<p>If a Guest user exceeds any of these quotas, they immediately transition into <code>idle</code> state.</p>
 <hr />
 <h2 id="idle-state-enforcement">Idle State Enforcement</h2>
-<p>Idle State is a system-wide restriction applied when a Guest user <strong>exceeds session or operation quotas</strong>:</p>
+<p>Idle State is a system-wide restriction applied when a Guest user exceeds session or operation quotas:</p>
 <ul>
-<li>The user is <strong>immediately blocked</strong> from further actions until the next reset period.  </li>
-<li>They are <strong>prompted to complete KYC verification</strong> to upgrade to <strong>Basic</strong> and regain full access.  </li>
-<li>Idle State <strong>cannot be bypassed</strong> unless the user either <strong>waits for the reset period</strong> or <strong>upgrades to Basic</strong>.  </li>
+<li>The user is blocked from further actions until the next reset period.  </li>
+<li>They are prompted to complete KYC verification to upgrade to <code>basic</code> and regain full access.  </li>
+<li>Idle State cannot be bypassed unless the user either waits for the reset period or upgrades to <code>basic</code>.  </li>
 </ul>
 <hr />
 <h2 id="guest-session-flow-diagram">Guest Session Flow Diagram</h2>
@@ -920,11 +919,11 @@
 <h2 id="enforcing-kyc-completion">Enforcing KYC Completion</h2>
 <p>The Guest session model is intentionally restrictive to drive users toward KYC verification:</p>
 <ul>
-<li>Frequent session expirations encourage users to verify their identity and upgrade to Basic status.  </li>
-<li>Operation quotas prevent Guest users from overusing the system while allowing limited interaction.  </li>
+<li>Frequent session expirations encourage users to verify their identity and upgrade to <code>basic</code>.  </li>
+<li>Operation quotas prevent <code>guest</code> users from overusing the system while allowing limited interaction.  </li>
 <li>Idle State enforces a strong conversion incentive—users must either wait for quotas to reset or complete KYC to continue.  </li>
 </ul>
-<p>By applying these policies, the system ensures that Guest users do not remain unverified indefinitely.</p>
+<p>By applying these policies, the system ensures that <code>guest</code> users do not remain unverified indefinitely.</p>
 <hr />
 <h2 id="related-sections">Related Sections</h2>
 <ul>

@@ -586,7 +586,7 @@
         <li class="md-nav__item">
   <a href="#related-sections" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Sections
+      Related Sections:
     </span>
   </a>
   
@@ -891,7 +891,7 @@
         <li class="md-nav__item">
   <a href="#related-sections" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Sections
+      Related Sections:
     </span>
   </a>
   
@@ -923,7 +923,7 @@
 </ul>
 <hr />
 <h2 id="key-user-roles">Key User Roles</h2>
-<p>Each user is assigned a role that determines their permissions and operational limits.</p>
+<p>Each user is assigned a role (<code>type</code>) that determines their permissions and operational limits.</p>
 <table>
 <thead>
 <tr>
@@ -999,7 +999,6 @@
 <ul>
 <li><strong>Non-compliance</strong> → KYC or verification documents expire or are revoked.  </li>
 <li><strong>Manual Downgrade</strong> → Admin intervention due to policy enforcement.  </li>
-<li><strong>Subscription Expiry (if applicable)</strong> → If a role is tied to a subscription and the user fails to renew.  </li>
 <li><strong>Partner-Defined Policies</strong> → Additional downgrade conditions based on security or business needs.  </li>
 </ul>
 <blockquote>
@@ -1027,7 +1026,7 @@
 </tr>
 <tr>
 <td><strong>Database Layer</strong></td>
-<td>Row-Level Security (RLS) (data access limited based on user role &amp; tenant ID)</td>
+<td>Row-Level Security (RLS) (data access limited based on user role &amp; provider ID)</td>
 </tr>
 <tr>
 <td><strong>Session Layer</strong></td>
@@ -1056,13 +1055,11 @@
 </code></pre></div>
 <p>Each partner can override role-based rules to meet their security and operational requirements.</p>
 <hr />
-<h2 id="related-sections">Related Sections</h2>
+<h2 id="related-sections">Related Sections:</h2>
 <ul>
-<li><a href="../multi_tenancy/">Partner-Specific Isolation</a>  </li>
-<li><a href="../../architecture/user_management/">User Management Model</a>  </li>
+<li><a href="../../architecture/user_management/">User Management Model</a></li>
+<li><a href="../multi_tenancy/">Multi-Tenancy and Data Isolation</a></li>
 </ul>
-<hr />
-<p>© 2025 CompanyName. Internal use only.</p>
 
 
 
