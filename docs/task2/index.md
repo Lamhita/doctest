@@ -1,4 +1,4 @@
-# OpenAPI Specification
+# Rest API Reference
 
 This page renders the OpenAPI specification for the CompanyName's Multi-Tenant Architecture using Swagger UI.
 

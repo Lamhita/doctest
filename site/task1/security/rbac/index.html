@@ -759,7 +759,7 @@
         
   
   <span class="md-ellipsis">
-    Task 2. API Specification
+    Task 2. REST API Reference
     
   </span>
   
@@ -950,7 +950,7 @@
 </tr>
 <tr>
 <td><code>company</code></td>
-<td>Enterprise-level user.</td>
+<td>Enterprise-tier user.</td>
 <td>- No session/operation limits <br> - Access to features based on partner policies</td>
 </tr>
 <tr>
@@ -978,16 +978,9 @@
 <h2 id="role-transitions">Role Transitions</h2>
 <ul>
 <li><strong>Guest</strong> users must pass KYC verification to upgrade to <strong>Basic</strong>.  </li>
+<li><strong>Basic</strong> users can upgrade to <strong>Advanced</strong> if allowed by partner policies: some partners may require additional KYC verification for the upgrade.  </li>
 <li>
-<p><strong>Basic</strong> users can upgrade to <strong>Advanced</strong> if allowed by partner policies:  </p>
-<ul>
-<li>Some partners may require additional KYC verification.  </li>
-<li>Subscription-based upgrades may unlock Advanced status.  </li>
-<li>Activity-based automatic upgrades may apply for some partners.  </li>
-</ul>
-</li>
-<li>
-<p><strong>Advanced</strong> users can transition to <strong>Company</strong> status if they meet enterprise-level requirements, which may include:  </p>
+<p><strong>Advanced</strong> users can transition to <strong>Company</strong> status if they meet enterprise-grade requirements, which may include:  </p>
 <ul>
 <li>Business verification, corporate onboarding, or admin approval.  </li>
 </ul>

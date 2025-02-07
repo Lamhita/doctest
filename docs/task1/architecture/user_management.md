@@ -13,7 +13,7 @@ The User Management Model defines how users are created, managed, authenticated,
 
 ## Key User Attributes
 
-### 1. User Identification
+### User Identification
 
 Each user is uniquely identified within the system by:
 
@@ -22,7 +22,7 @@ Each user is uniquely identified within the system by:
 
 ---
 
-## 2. User Roles
+## User Roles
 
 Users are assigned one of the following roles, which define their access level and available features:
 
@@ -38,7 +38,7 @@ Users are assigned one of the following roles, which define their access level a
 
 ---
 
-## 3. User Status (`status`) vs. Subscription Status (`sub_status`)
+## User Status (`status`) vs. Subscription Status (`sub_status`)
 
 The system tracks users through two independent statuses:
 
@@ -161,7 +161,7 @@ SPM --> USTE : Update sub_status to unsigned
 
 ---
 
-## Related Sections:
+## Related Sections
 
 - [Partner Management Model](partner_management.md)
 - [Role-Based Access Control (RBAC)](../security/rbac.md)

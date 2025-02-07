@@ -631,7 +631,7 @@
         
   
   <span class="md-ellipsis">
-    Task 2. API Specification
+    Task 2. REST API Reference
     
   </span>
   
@@ -709,6 +709,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -759,6 +768,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -781,8 +799,8 @@
 <p>Subscription plans provide users with a range of service options, each configured with specific parameters.</p>
 <p>Following our latest system update, user records have been enhanced with additional attributes, as detailed in our updated API documentation. These changes may require adjustments to customer support workflows and subscription management processes.</p>
 <p>For example, when a user subscribes to a plan, their status is temporarily updated to <code>signing</code> pending subscription confirmation.</p>
-<p>Providers can create multiple subscription plans, with each plan's availability governed by user type mappings. These plans can be customized to address specific business requirements.</p>
-<p>Moreover, subscription plans are structured around established user attributes and enforced through role-based access controls (RBAC) to ensure system security.</p>
+<p>Providers can create an unlimited number of subscription plans, with each plan's availability governed by user type mappings. These plans can be customized to address specific business requirements.</p>
+<p>Moreover, subscription plans are structured around standardized user attributes and enforced through role-based access controls (RBAC) to ensure system security.</p>
 <hr />
 <h3 id="revised-version-user-focused">Revised Version (User-Focused)</h3>
 <p>Discover a variety of subscription plans designed just for you–each plan comes with its own set of features.</p>
@@ -791,6 +809,7 @@
 <p>If you're a provider, you can create as many subscription plans as you need. Each plan is set up for specific user types, and you can easily tweak them to suit your business needs.</p>
 <p>Plus, our subscription plans are built around familiar user profiles and protected by role-based access controls (RBAC) to keep things secure.</p>
 <hr />
+<h3 id="notes">Notes</h3>
 <table>
 <thead>
 <tr>
@@ -824,22 +843,22 @@
 <td>Removed redundancy and merged into a more natural, flowing explanation.</td>
 </tr>
 <tr>
-<td>For example, the users can be transferred to the 'idle' state before they confirm purchasing a plan.</td>
-<td><strong>For example, when a user subscribes to a plan, their status is temporarily updated to 'signing' pending subscription confirmation.</strong></td>
-<td>"The users" should be "users" (incorrect article usage). "Transferred to the 'idle' state" is incorrect; users actually transition to 'signing' (see the API documentation). "Before they confirm purchasing" is awkward—"pending subscription confirmation" is smoother.</td>
-<td><strong>For example, once you subscribe to a plan, your status will change to 'signing' while we finalize everything.</strong></td>
+<td>For example, the users can be transferred to the <code>idle</code> state before they confirm purchasing a plan.</td>
+<td><strong>For example, when a user subscribes to a plan, their status is temporarily updated to <code>signing</code> pending subscription confirmation.</strong></td>
+<td>"The users" should be "users" (incorrect article usage). "Transferred to the <code>idle</code> state" is incorrect; users actually transition to <code>signing</code> (see the <a href="../task2/">API Reference</a>). "Before they confirm purchasing" is awkward—"pending subscription confirmation" is smoother.</td>
+<td><strong>For example, once you subscribe to a plan, your status will change to <code>signing</code> while we finalize everything.</strong></td>
 <td>Conversational tone using "once you subscribe" and "we finalize everything" for clarity and engagement.</td>
 </tr>
 <tr>
 <td>The capacity of plans per provider is unlimited, so feel free to create as many of them as necessary and customize them to up to a desirable extent.</td>
-<td><strong>Providers can create multiple subscription plans, with each plan's availability governed by user type mappings. These plans can be customized to address specific business requirements.</strong></td>
+<td><strong>Providers can create an unlimited number of subscription plans, with each plan's availability governed by user type mappings. These plans can be customized to address specific business requirements.</strong></td>
 <td>"The capacity of plans per provider is unlimited" is misleading; added explanation about user type mappings. "Feel free" is too informal for a partner-focused document. "Customize them to up to a desirable extent" is unclear and unnatural—simplified for clarity.</td>
 <td><strong>If you're a provider, you can create as many subscription plans as you need. Each plan is set up for specific user types, and you can easily tweak them to suit your business needs.</strong></td>
 <td>Uses "If you're a provider" for direct user engagement. "Easily tweak them" makes customization sound approachable and user-friendly.</td>
 </tr>
 <tr>
 <td>Despite that, plans - merely surface well-known user attributes complying completely with the corresponding state flaw.</td>
-<td><strong>Moreover, subscription plans are structured around established user attributes and enforced through role-based access controls (RBAC) to ensure system security.</strong></td>
+<td><strong>Moreover, subscription plans are structured around standardized user attributes and enforced through role-based access controls (RBAC) to ensure system security.</strong></td>
 <td>"Despite that" is unclear in this context. "Plans - merely surface well-known user attributes" is awkward and vague; reworded for clarity. "Complying completely with the corresponding state flaw" is confusing—likely intended to refer to RBAC constraints.</td>
 <td><strong>Plus, our subscription plans are built around familiar user profiles and protected by role-based access controls (RBAC) to keep things secure.</strong></td>
 <td>Uses "Plus, our subscription plans" to sound more approachable. Keeps security emphasis while making it more user-friendly.</td>

@@ -20,7 +20,7 @@ Each user is assigned a role (`type`) that determines their permissions and oper
 | `guest`   | Temporary user with limited access. | - Session expiry: 20 min <br> - Daily limit: 5 operations <br> - Weekly limit: 20 operations <br> - Upgrade to Basic after KYC |
 | `basic`   | Verified user after KYC approval. | - Session expiry: Partner-defined <br> - Daily limit: 20 operations <br> - Weekly limit: 50 operations <br> - Eligible for Advanced upgrade |
 | `advanced` | Fully verified user with expanded access. | - No session/operation limits <br> - Access to features defined by partner policies <br> - Eligible for Company upgrade |
-| `company` | Enterprise-level user. | - No session/operation limits <br> - Access to features based on partner policies |
+| `company` | Enterprise-tier user. | - No session/operation limits <br> - Access to features based on partner policies |
 | `admin`   | System administrator. | - Cannot subscribe to plans <br> - Manages system settings & user permissions |
 
 Each partner can customize role configurations based on their specific business needs.
@@ -66,13 +66,8 @@ rectangle "User Roles" {
 ## Role Transitions
 
 - **Guest** users must pass KYC verification to upgrade to **Basic**.  
-- **Basic** users can upgrade to **Advanced** if allowed by partner policies:  
-
-    - Some partners may require additional KYC verification.  
-    - Subscription-based upgrades may unlock Advanced status.  
-    - Activity-based automatic upgrades may apply for some partners.  
-
-- **Advanced** users can transition to **Company** status if they meet enterprise-level requirements, which may include:  
+- **Basic** users can upgrade to **Advanced** if allowed by partner policies: some partners may require additional KYC verification for the upgrade.  
+- **Advanced** users can transition to **Company** status if they meet enterprise-grade requirements, which may include:  
 
     - Business verification, corporate onboarding, or admin approval.  
 

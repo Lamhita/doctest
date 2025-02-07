@@ -121,7 +121,7 @@ KYC --> UM : Verification results
 
 ---
 
-## Related Sections:
+## Related Sections
 
 - [Partner Management Model](partner_management.md)
 - [User Management Model](user_management.md)

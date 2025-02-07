@@ -36,5 +36,5 @@ nav:
           - Guest Session Management: task1/sessions/guest_session_management.md
           - Basic Session Management: task1/sessions/basic_session_management.md
       - Subscription Management And Lifecycle: task1/subscription_management.md
-  - Task 2. API Specification: task2/index.md
+  - Task 2. REST API Reference: task2/index.md
   - Task 3. Text Editing Exercise: task3/index.md

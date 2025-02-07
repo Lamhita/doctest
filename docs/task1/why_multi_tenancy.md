@@ -83,7 +83,7 @@ To ensure strong security and regulatory compliance, the system:
 - Implements session management rules to prevent cross-tenant access issues.  
 - Uses RBAC enforcement to prevent unauthorized access across partners.  
 
-See: [Partner-Specific Isolation](./security/multi_tenancy.md).
+See: [Multi-Tenancy & Data Isolation](./security/multi_tenancy.md).
 
 ---
 

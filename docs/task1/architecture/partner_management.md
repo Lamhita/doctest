@@ -113,7 +113,7 @@ SPC --> DIL : Enforce subscription restrictions
 
 ---
 
-## Related Sections:
+## Related Sections
 
 - [System Components](system_components.md)
 - [User Management Model](user_management.md)
